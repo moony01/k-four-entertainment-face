@@ -1,9 +1,117 @@
-<nav class="navbar">
-    <div class="container">
-        <a class="navbar-brand" href="#">KPOP IDOL 4대 엔터 얼굴상 테스트</a>
+---
+layout: default
+---
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mbtichat.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<!-- <nav class="container navbar">
+    <a class="navbar-logo" onclick="fnMovePage()">KPOP 소속사 얼굴상 테스트</a>
+</nav> -->
+<header class="container header">
+    <a href="#" class="header__icon" id="header__icon"></a>
+    <a class="header__logo" onclick="fnMovePage()">KPOP 소속사 얼굴상 테스트</a>
+    <nav class="menu">
+      <a onclick="fnMovePage('mbtichat')">MBTI AI 채팅</a>
+      <a onclick="fnMovePage('blog')">블로그</a>
+    </nav>
+</header>
+<div class="container content-wrapper">
+    <h1>내 얼굴은 K-POP 엔터 소속사중 어떤 얼굴상일까?</h1>
+    <div class="language">
+        <span>language:</span>
+        <select name="lang" id="lang" onchange="fnChangeLang(this)">
+            <option value="ko" id="ko" selected="selected">한국어</option>
+            <option value="en" id="en">English</option>
+            <option value="de" id="de">Deutsch</option>
+            <option value="es" id="es">Español</option>
+            <option value="fr" id="fr">Français</option>
+            <option value="id" id="id">Indonesia</option>
+            <option value="ja" id="ja">日本語</option>
+            <option value="nl" id="nl">Nederlands</option>
+            <option value="pl" id="pl">Polski</option>
+            <option value="pt" id="pt">Português</option>
+            <option value="ru" id="ru">Русский</option>
+            <option value="tr" id="tr">Türkçe</option>
+            <option value="uk" id="uk">Українська</option>
+            <option value="vi" id="vi">Tiếng việt</option>
+            <option value="zh" id="zh">中文</option>
+        </select>
     </div>
-</nav>
-<div class="footer">
-    <span>© k-four-entertainment-face 2023. ALL Rights Reserved.</span>
-    <a class="privacy" href="#">Privacy policy</a>
+    <div class="gender-select">
+        <span>성별을 선택하세요</span>
+        <div class="gender-select-switch">
+            <span>여자</span>
+            <input type="checkbox" id="gender" onclick="fnGenderSelect(this)"/><label for="gender">Toggle</label>
+            <span>남자</span>
+        </div>
+    </div>
+    <div class="file-upload">
+        <!--<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )"></button>-->
+        <div class="image-upload-wrap">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" onclick="$('.file-upload-input').trigger( 'click' )" accept="image/*" />
+            <div class="drag-text">
+                <img class="baseline_upload" src="/static/img/ico-upload.png">
+                <h3>얼굴 사진을 올려놓거나 눌러서 업로드하세요!</h3>
+            </div>
+        </div>
+        <div class="file-upload-content">
+            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+            <div id="loading" class="animated bounce">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <p class="text-center">AI가 당신의 KPOP 소속사 얼굴상을 분석중입니다.</p>
+            </div>
+            <p class="result-messege"></p>
+            <div id="label-container"></div>
+            <div class="image-title-wrap">
+                <button type="button" class="try-again-btn" onclick="removeUpload()">
+                    <span class="try-again-text">다른 사진으로 재시도</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="share-contents">
+        <div class="sns-share">공유하기</div>
+        <ul class="sns">
+            <li>
+            <a href="#n" onclick="fn_sendFB('facebook');return false;" class="facebook" target="_self" title="페이스북 새창열림"></a>
+            </li>
+            <li>
+            <a href="#n" onclick="fn_sendFB('twitter');return false;" class="twitter" target="_self" title="트위터 새창열림"></a>
+            </li>
+            <li>
+            <a href="#n" onclick="fn_sendFB('band');return false;" class="band" target="_self" title="네이버밴드 새창열림"></a>
+            </li>
+            <li>
+            <a href="#n" onclick="fn_sendFB('kakaotalk');return false;" class="kakaotalk" target="_self" title="카카오톡 새창열림"></a>
+            </li>
+            <li>
+            <a href="#n" onclick="fn_sendFB('kakaostory');return false;" class="kakaostory" target="_self" title="카카오스토리 새창열림"></a>
+            </li>
+            <li>
+            <a href="#n" onclick="fn_sendFB('copyurl');return false;" class="copyurl" target="_self" title="mbtichat url 복사"></a>
+            </li>
+        </ul>
+    </div>
 </div>
+<div id="disqus_thread" class="container"></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<footer class="container footer">
+    <span>© kpop-companies-face 2023. ALL Rights Reserved.</span>
+    <a class="privacy" href="#">Privacy policy</a>
+</footer>
