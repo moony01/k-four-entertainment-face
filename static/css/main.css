@@ -1,3 +1,6 @@
+.site-pusher {
+    padding-top: 84px;
+}
 .container {
     display: flex;
     align-items: center;
@@ -18,6 +21,7 @@
     position: fixed;
     width: 100vw;
     height: 84px;
+    top: 0;
     background-color: #283618;
     z-index: 1;
     display: flex;
@@ -183,7 +187,6 @@
 .file-upload {
     width: 100%;
     margin-bottom: 20px;
-    background-color: #f7f7f7;
 }
 .file-upload-btn {
     width: 100%;
@@ -215,6 +218,7 @@
 .file-upload-content {
     display: none;
     text-align: center;
+    background-color: #f7f7f7;
 }
 
 .file-upload-input {
@@ -265,7 +269,8 @@
 .file-upload-image {
     max-width: 400px;
     margin: auto;
-    padding: 20px;
+    width: 100%;
+    padding-top: 40px;
 }
 
 .result-messege {
