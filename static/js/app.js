@@ -160,23 +160,23 @@ async function predict() {
     switch (prediction[0].className) {
       case "sm":
         resultTitle = "SM상";
-        resultExplain = "";
-        resultCeleb = "";
+        resultExplain = "#꽃미남, #짙은 쌍커풀, #밝은 인상";
+        resultCeleb = "SM 소속 연예인: NCT, 동방신기, 샤이니, 슈퍼주니어, 엑소";
         break;
       case "jyp":
         resultTitle = "JYP상";
-        resultExplain = "";
-        resultCeleb = "";
+        resultExplain = "#무쌍커풀, #매력있는 비주얼";
+        resultCeleb = "JYP 소속 연예인: 2PM, 2AM, GOT7, 스트레이 키즈";
         break;
       case "yg":
         resultTitle = "YG상";
-        resultExplain = "";
-        resultCeleb = "";
+        resultExplain = "#개성있는 비주얼, #HIP #스타일리쉬 #쿨한 인상";
+        resultCeleb = "YG 소속 연예인: 빅뱅, 위너, 아이콘, 트레저";
         break;
       case "hybe":
         resultTitle = "HYBE상";
-        resultExplain = "";
-        resultCeleb = "";
+        resultExplain = "#다양한 매력";
+        resultCeleb = "HYBE 소속 연예인: 방탄소년단, 투모로우바이투게더, 세븐틴, 엔하이픈";
         break;
       default:
         resultTitle = "알수없음";
@@ -187,23 +187,23 @@ async function predict() {
     switch (prediction[0].className) {
       case "sm":
         resultTitle = "SM상";
-        resultExplain = "";
-        resultCeleb = "";
+        resultExplain = "#토끼상 #최강 비주얼 #밝은 인상";
+        resultCeleb = "SM 소속 연예인: 소녀시대, 레드벨벳, 에스파, 에프엑스, 보아";
         break;
       case "jyp":
         resultTitle = "JYP상";
-        resultExplain = "";
-        resultCeleb = "";
+        resultExplain = "#여우상 #매력있는 비주얼";
+        resultCeleb = "JYP 소속 연예인: 원더걸스, 트와이스, ITZY, 미쓰에이, 엔믹스";
         break;
       case "yg":
         resultTitle = "YG상";
-        resultExplain = "";
-        resultCeleb = "";
+        resultExplain = "#고양이상 #고급스러운 비주얼";
+        resultCeleb = "YG 소속 연예인: 2EN1, 블랙핑크, 이하이, 에픽하이";
         break;
       case "hybe":
         resultTitle = "HYBE상";
-        resultExplain = "";
-        resultCeleb = "";
+        resultExplain = "#개성있는 비주얼 #다양한 매력";
+        resultCeleb = "HYBE 소속 연예인: 뉴진스, 르세라핌, 프로미스나인";
         break;
       default:
         resultTitle = "알수없음";
