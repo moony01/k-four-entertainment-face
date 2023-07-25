@@ -18,19 +18,16 @@ layout: default
     (d.head || d.body).appendChild(s);
     })();
 </script>
-<!-- <nav class="container navbar">
-    <a class="navbar-logo" onclick="fnMovePage()">KPOP 소속사 얼굴상 테스트</a>
-</nav> -->
 <nav class="header">
     <a href="#" class="header__icon" id="header__icon"></a>
-    <a class="header__logo" onclick="fnMovePage()">KPOP 소속사 얼굴상 테스트</a>
+    <a class="header__logo" onclick="fnMovePage()">KPOP 얼굴상 테스트</a>
     <nav class="menu">
       <a onclick="fnMovePage('mbtichat')">MBTI AI 채팅</a>
       <a onclick="fnMovePage('blog')">블로그</a>
     </nav>
 </nav>
 <div class="container content-wrapper">
-    <h1>내 얼굴은 K-POP 엔터 소속사중 어떤 얼굴상일까?</h1>
+    <h1>"내 얼굴은 어떤 케이팝 소속사 얼굴상임?"</h1>
     <div class="language">
         <span>language:</span>
         <select name="lang" id="lang" onchange="fnChangeLang(this)">
@@ -52,11 +49,19 @@ layout: default
         </select>
     </div>
     <div class="gender-select">
-        <span>성별을 선택하세요</span>
+        <span>1. 성별 선택ㄱㄱ</span>
         <div class="gender-select-switch">
             <span>여자</span>
             <input type="checkbox" id="gender" onclick="fnGenderSelect(this)"/><label for="gender">Toggle</label>
             <span>남자</span>
+        </div>
+    </div>
+    <div class="tips-contents">
+        <div class="tips-title">2. 테스트전 꿀팁</div>
+        <div>
+            <li>최대한 얼굴이 잘나온 사진으로 업로드해야 정확한 결과나옴</li>
+            <li>결과는 재미로만...</li>
+            <li style="color:red">업로드한 이미지는 그 어디에도 저장되지 않습니다.</li>
         </div>
     </div>
     <div class="file-upload">
@@ -65,7 +70,7 @@ layout: default
             <input class="file-upload-input" type='file' onchange="readURL(this);" onclick="$('.file-upload-input').trigger( 'click' )" accept="image/*" />
             <div class="drag-text">
                 <img class="baseline_upload" src="static/img/ico-upload.png">
-                <h3>얼굴 사진을 올려놓거나 눌러서 업로드하세요!</h3>
+                <h3>3. 이미지를 올려놓거나 눌러서 업로드 ㄱㄱ</h3>
             </div>
         </div>
         <div class="file-upload-content">
@@ -84,15 +89,6 @@ layout: default
                     <span class="try-again-text">다른 사진으로 재시도</span>
                 </button>
             </div>
-        </div>
-    </div>
-    <div class="tips-contents">
-        <div class="tips-title">Tips</div>
-        <div>
-            <li>업로드하는 사진의 얼굴이 사진의 절반 이상을 차지하는 이미지일수록 더욱 정확한 결과가 나옵니다.</li>
-            <li>인공지능이 학습한 얼굴이미지는 소속사 얼굴상의 대표 아티스트 얼굴을 학습하였습니다.</li>
-            <li>결과는 재미로만 봐주세요.</li>
-            <li>업로드한 이미지는 그 어디에도 저장되지 않습니다.</li>
         </div>
     </div>
     <div class="share-contents">
@@ -122,6 +118,6 @@ layout: default
 <div id="disqus_thread" class="container"></div>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <footer class="footer">
-    <span>© kpop-companies-face 2023. ALL Rights Reserved.</span>
+    <span>© kpopface 2023. ALL Rights Reserved.</span>
     <a class="privacy" href="#">Privacy policy</a>
 </footer>

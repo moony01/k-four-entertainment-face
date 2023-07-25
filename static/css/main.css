@@ -13,7 +13,7 @@
 }
 .content-wrapper h1 {
     color: #283618;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-align: center;
 }
 /* navbar : start */
@@ -108,7 +108,7 @@
 .language {
     display: flex;
     justify-content: center;
-    margin-bottom: 82px;
+    margin-bottom: 80px;
 }
 .language span {
     display: flex;
@@ -130,12 +130,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
 }
 .gender-select > span {
     font-size: 1.6rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 10psx;
 }
 .gender-select .gender-select-switch {
 	display: flex;
@@ -314,6 +313,7 @@
 
 /* Tips: start */
 .tips-contents {
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -406,7 +406,7 @@
 
 /* share: start */
 .sns-share {
-    font-family: 'NanumBarunGothicBold';
+    /* font-family: 'NanumBarunGothicBold'; */
     text-align: center;
 }
 
