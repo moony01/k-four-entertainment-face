@@ -2,11 +2,14 @@ let URL;
 const urlMale = "https://teachablemachine.withgoogle.com/models/OjV8A4hkV/";
 const urlFemale = "https://teachablemachine.withgoogle.com/models/VXq81IU-K/";
 let model, webcam, labelContainer, maxPredictions;
+let langType = "";
 
 document.addEventListener('DOMContentLoaded', function() {
   var headerIcon = document.getElementById('header__icon');
   var siteCache = document.getElementById('site-cache');
   var body = document.body;
+
+  Kakao.init('8329cd81f78ef956d4487f90e5a4cd49'); 
 
   headerIcon.addEventListener('click', function(e) {
     e.preventDefault();
@@ -21,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
 //header 메뉴 클릭시 페이지 이동
 function fnMovePage(page) {
   if(page == "" || page == null) {
-      location.href = "/";
+      location.href = "/kpop-companies-face/";
     } else if(page == "blog") {
       location.href = "/";
     } else {
-      location.href = "https://mbtichat.info";
+      window.open("https://mbtichat.info", "_blank");
     }
 }
 
@@ -66,6 +69,65 @@ function removeUpload() {
   location.reload();
 }
 
+//공유하기 버튼클릭
+function fn_sendFB(sns) {
+  var thisUrl = ""
+  var snsTitle = "";
+  var snsDesc = "";
+  
+  if(!langType == "" || !langType == null || !langType == "ko") {
+    thisUrl = "https://moony01.com/kpop-companies-face/"+langType;
+    snsTitle = "KPOP COMPANIES FACE TEST";
+    snsDesc = "What is my face like in K-POP entertainment companies?";
+  } else {
+    thisUrl = "https://moony01.com/kpop-companies-face/";
+    snsTitle = "KPOP 소속사 얼굴상 테스트";
+    snsDesc = "내 얼굴은 K-POP 엔터 소속사중 어떤 얼굴상일까?";
+  }
+
+  if( sns == 'facebook' ) {
+    var url = "http://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(thisUrl);
+    window.open(url, "", "width=486, height=286");
+  }
+  else if( sns == 'twitter' ) {
+    var url = "http://twitter.com/share?url="+encodeURIComponent(thisUrl)+"&text="+encodeURIComponent(snsTitle);
+    window.open(url, "tweetPop", "width=486, height=286,scrollbars=yes");
+  }
+  else if( sns == 'band' ) {
+    var url = "http://www.band.us/plugin/share?body="+encodeURIComponent(snsTitle)+"&route="+encodeURIComponent(thisUrl);
+    window.open(url, "shareBand", "width=400, height=500, resizable=yes");
+  }
+  else if( sns == 'kakaotalk' ) {
+    // 카카오링크 버튼 생성
+    Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: snsTitle,                    // 제목
+          description: snsDesc,               // 설명
+          imageUrl: 'https://moony01.com/img/share-img.jpg',  // 썸네일 이미지
+          link: {
+              mobileWebUrl: thisUrl,
+              webUrl: thisUrl
+          }
+        }
+    });
+  } else if( sns == 'kakaostory') {
+    // 사용할 앱의 JavaScript 키 설정
+    Kakao.Story.share({
+      url: thisUrl,
+      text: snsTitle
+    });
+  } else if( sns == 'copyurl') {
+    var tmp = document.createElement('input');
+    var url = thisUrl;
+    document.body.appendChild(tmp);
+    tmp.value = url;
+    tmp.select();
+    document.execCommand("copy");
+    document.body.removeChild(tmp);
+    alert("URL이 복사되었습니다.");
+  } 
+}
 /* ******************************************************************************************
  * FUNCTION
 ****************************************************************************************** */

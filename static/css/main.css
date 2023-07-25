@@ -20,12 +20,13 @@
     height: 84px;
     background-color: #283618;
     z-index: 1;
-    padding: 0 15vw;
+    display: flex;
+    align-items: center;
 }
 .header__logo {
     color: #fefae0;
     font-size: 1.56rem; /* 25px */
-    padding-right: 3vw;
+    padding: 0 3vw;
 }
 /* MENU */
 .menu {
@@ -457,4 +458,66 @@
 .footer a:hover {
     text-decoration: underline;
 }
+.footer span {
+    text-align: center;
+}
 /* footer: end */
+
+/*
+ * 대형 디스플레이 (Large Displays):
+ * 해상도: 1200px 이상
+ * 장치: 대형 데스크탑 모니터, TV 등
+ */
+ @media screen and (min-width: 1200px) { 
+
+ }
+ 
+ /*
+  * 중형 디스플레이 (Medium Displays):
+  * 해상도: 992px - 1199px
+  * 장치: 노트북, 태블릿 등
+  */
+ @media screen and (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        width: 70vw;
+    }
+ }
+ 
+ /*
+  * 작은 디스플레이 (Small Displays):
+  * 해상도: 768px - 991px
+  * 장치: 모바일 장치 (스마트폰, 테블릿 등) 및 일부 작은 데스크탑 모니터
+  */
+ @media screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: 70vw;
+    }
+ }
+ 
+ /*
+  * 매우 작은 디스플레이 (Extra Small Displays):
+  * 해상도: 767px 이하
+  * 장치: 모바일 장치 (스마트폰, 테블릿 등)
+  */
+ @media screen and (max-width: 767px) {
+    .container {
+        width: 70vw;
+    }
+ }
+ 
+ @media screen and (max-width: 609px) {
+ 
+ }
+ 
+ @media screen and (max-width: 559px) {
+    .container {
+        width: 90vw;
+    }
+ }
+ 
+ @media screen and (min-width: 270px) and (max-width: 330px) {
+
+ }
+
+
+
