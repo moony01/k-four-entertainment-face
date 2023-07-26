@@ -1,6 +1,8 @@
 let URL;
-const urlMale = "https://teachablemachine.withgoogle.com/models/OjV8A4hkV/";
-const urlFemale = "https://teachablemachine.withgoogle.com/models/VXq81IU-K/";
+// const urlMale = "https://teachablemachine.withgoogle.com/models/OjV8A4hkV/"; //v1
+const urlMale = "https://teachablemachine.withgoogle.com/models/9yhf9-8B7/"; //v2
+// const urlFemale = "https://teachablemachine.withgoogle.com/models/VXq81IU-K/"; //v1
+const urlFemale = "https://teachablemachine.withgoogle.com/models/Fq3_K1cua/"; //v2
 let model, webcam, labelContainer, maxPredictions;
 let langType = "";
 

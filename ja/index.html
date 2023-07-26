@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-lang
 ---
 <script>
     /**
@@ -20,24 +20,24 @@ layout: default
 </script>
 <nav class="header">
     <a href="#" class="header__icon" id="header__icon"></a>
-    <a class="header__logo" onclick="fnMovePage()">KPOP 얼굴상 테스트</a>
+    <a class="header__logo" onclick="fnMovePage()">KPOP FACE TEST</a>
     <nav class="menu">
-      <a onclick="fnMovePage('mbtichat')">MBTI AI 채팅</a>
-      <a onclick="fnMovePage('blog')">블로그</a>
+      <a onclick="fnMovePage('mbtichat')">MBTI AI CHAT</a>
+      <a onclick="fnMovePage('blog')">BLOG</a>
     </nav>
 </nav>
 <div class="container content-wrapper">
-    <h1>"내 얼굴은 어떤 케이팝 소속사 얼굴상임?"</h1>
+    <h1>"私の顔はどのKPOPエージェンシーに属していますか？"</h1>
     <div class="language">
         <span>language:</span>
         <select name="lang" id="lang" onchange="fnChangeLang(this)">
-            <option value="ko" id="ko" selected="selected">한국어</option>
+            <option value="ko" id="ko">한국어</option>
             <option value="en" id="en">English</option>
             <option value="de" id="de">Deutsch</option>
             <option value="es" id="es">Español</option>
             <option value="fr" id="fr">Français</option>
             <option value="id" id="id">Indonesia</option>
-            <option value="ja" id="ja">日本語</option>
+            <option value="ja" id="ja" selected="selected">日本語</option>
             <option value="nl" id="nl">Nederlands</option>
             <option value="pl" id="pl">Polski</option>
             <option value="pt" id="pt">Português</option>
@@ -49,20 +49,20 @@ layout: default
         </select>
     </div>
     <div class="gender-select">
-        <span>1. 성별 선택ㄱㄱ</span>
+        <span>1. 性別を選択してください</span>
         <div class="gender-select-switch">
-            <span>여자</span>
+            <span>女性</span>
             <input type="checkbox" id="gender" onclick="fnGenderSelect(this)"/><label for="gender">Toggle</label>
-            <span>남자</span>
+            <span>男性</span>
         </div>
     </div>
     <div class="tips-contents">
-        <div class="tips-title">2. 테스트전 꿀팁</div>
+        <div class="tips-title">2. TIP</div>
         <div>
-            <li>최대한 얼굴이 잘나온 사진으로 업로드해야 정확한 결과나옴</li>
-            <li>데이터 확실한 대형 3사 SM, JYP, YG만 다룹니다. 의견 댓글로 남겨주세요</li>
-            <li>결과는 재미로만...</li>
-            <li style="color:red">업로드한 이미지는 그 어디에도 저장되지 않습니다.</li>
+            <li>正確な結果を得るために、顔のはっきりした写真をアップロードしてください。</li>
+            <li>データの制約により、テストの結果にはSM、JYP、YGのみが含まれています。コメントを以下に残してください。</li>
+            <li>結果は楽しみのためだけにお楽しみください。</li>
+            <li style="color:red">アップロードした画像はどこにも保存されません。</li>
         </div>
     </div>
     <div class="file-upload">
@@ -70,8 +70,8 @@ layout: default
         <div class="image-upload-wrap">
             <input class="file-upload-input" type='file' onchange="readURL(this);" onclick="$('.file-upload-input').trigger( 'click' )" accept="image/*" />
             <div class="drag-text">
-                <img class="baseline_upload" src="static/img/ico-upload.png">
-                <h3>3. 이미지를 올려놓거나 눌러서 업로드 ㄱㄱ</h3>
+                <img class="baseline_upload" src="../static/img/ico-upload.png">
+                <h3>3. 画像をドラッグまたは押してアップロードしてください。</h3>
             </div>
         </div>
         <div class="file-upload-content">
@@ -81,37 +81,37 @@ layout: default
                     <span class="sr-only">Loading...</span>
                 </div> -->
                 <i class="fas fa-circle-notch fa-spin"></i>
-                <p class="text-center">AI가 당신의 KPOP 소속사 얼굴상을 분석중입니다.</p>
+                <p class="text-center">AIがあなたのKPOPエージェンシーの顔を分析しています。</p>
             </div>
             <p class="result-messege"></p>
             <div id="label-container"></div>
             <div class="image-title-wrap">
                 <button type="button" class="try-again-btn" onclick="removeUpload()">
-                    <span class="try-again-text">다른 사진으로 재시도</span>
+                    <span class="try-again-text">再試行</span>
                 </button>
             </div>
         </div>
     </div>
     <div class="share-contents">
-        <div class="sns-share">공유하기</div>
+        <div class="sns-share">シェア</div>
         <ul class="sns">
             <li>
-            <a href="#n" onclick="fn_sendFB('facebook');return false;" class="facebook" target="_self" title="페이스북 새창열림"></a>
+            <a href="#n" onclick="fn_sendFB('facebook');return false;" class="facebook" target="_self" title="Facebook シェア"></a>
             </li>
             <li>
-            <a href="#n" onclick="fn_sendFB('twitter');return false;" class="twitter" target="_self" title="트위터 새창열림"></a>
+            <a href="#n" onclick="fn_sendFB('twitter');return false;" class="twitter" target="_self" title="Twitter シェア"></a>
             </li>
             <li>
-            <a href="#n" onclick="fn_sendFB('band');return false;" class="band" target="_self" title="네이버밴드 새창열림"></a>
+            <a href="#n" onclick="fn_sendFB('band');return false;" class="band" target="_self" title="NaverBand シェア"></a>
             </li>
             <li>
-            <a href="#n" onclick="fn_sendFB('kakaotalk');return false;" class="kakaotalk" target="_self" title="카카오톡 새창열림"></a>
+            <a href="#n" onclick="fn_sendFB('kakaotalk');return false;" class="kakaotalk" target="_self" title="Kakaotalk シェア"></a>
             </li>
             <li>
-            <a href="#n" onclick="fn_sendFB('kakaostory');return false;" class="kakaostory" target="_self" title="카카오스토리 새창열림"></a>
+            <a href="#n" onclick="fn_sendFB('kakaostory');return false;" class="kakaostory" target="_self" title="Kakaostory シェア"></a>
             </li>
             <li>
-            <a href="#n" onclick="fn_sendFB('copyurl');return false;" class="copyurl" target="_self" title="mbtichat url 복사"></a>
+            <a href="#n" onclick="fn_sendFB('copyurl');return false;" class="copyurl" target="_self" title="Url Copy"></a>
             </li>
         </ul>
     </div>
