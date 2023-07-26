@@ -5,6 +5,7 @@ const urlMale = "https://teachablemachine.withgoogle.com/models/9yhf9-8B7/"; //v
 const urlFemale = "https://teachablemachine.withgoogle.com/models/Fq3_K1cua/"; //v2
 let model, webcam, labelContainer, maxPredictions;
 let langType = "";
+var url = window.location.href;
 
 document.addEventListener('DOMContentLoaded', function() {
   var headerIcon = document.getElementById('header__icon');
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //header 메뉴 클릭시 페이지 이동
 function fnMovePage(page) {
   if(page == "" || page == null) {
-      location.href = "/kpop-companies-face/";
+      location.href = url;
     } else if(page == "blog") {
       location.href = "/";
     } else {
@@ -38,9 +39,13 @@ function fnMovePage(page) {
 function fnChangeLang(lang) {
   langType = lang.value;
   if(langType == "" || langType == null || langType == "ko") {
-    location.href = "/";
+    if(url == "https://moony01.com/kpopface/") {
+      location.href = "/kpopface/";
+    } else {
+      location.href = "/";
+    }
   } else {
-    location.href = "/"+langType;
+    location.href = url+"/"+langType;
   }
 }
 
