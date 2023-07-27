@@ -5,7 +5,8 @@ const urlMale = "https://teachablemachine.withgoogle.com/models/9yhf9-8B7/"; //v
 const urlFemale = "https://teachablemachine.withgoogle.com/models/Fq3_K1cua/"; //v2
 let model, webcam, labelContainer, maxPredictions;
 let langType = "";
-var domain = "https://moony01.com/kpopface/";
+let domain = "https://moony01.com/kpopface/";
+let loc = window.location.href;
 
 document.addEventListener('DOMContentLoaded', function() {
   var headerIcon = document.getElementById('header__icon');
@@ -77,14 +78,73 @@ function fn_sendFB(sns) {
   var thisUrl = ""
   var snsTitle = "";
   var snsDesc = "";
-  
+  langType = location.pathname.split("/")[1];
   if(!langType == "" || !langType == null || !langType == "ko") {
-    thisUrl = "https://moony01.com/kpop-companies-face/"+langType;
-    snsTitle = "KPOP COMPANIES FACE TEST";
-    snsDesc = "What is my face like in K-POP entertainment companies?";
+    thisUrl = loc+"/"+langType;
+    if(langType == "en") {
+      // 영어 번역
+      snsTitle = "KPOP Face Test";
+      snsDesc = "What is my facial resemblance to K-POP entertainment agencies?";
+    } else if(langType == "de") {
+      // 독일어 번역
+      snsTitle = "KPOP Gesichtstest";
+      snsDesc = "Wie ähnlich sieht mein Gesicht den K-POP Unterhaltungsagenturen aus?";
+    } else if(langType == "es") {
+      // 스페인어 번역
+      snsTitle = "Prueba de Rostro KPOP";
+      snsDesc = "¿A qué agencia de entretenimiento de K-POP se parece mi rostro?";
+    } else if(langType == "fr") {
+      // 프랑스어 번역
+      snsTitle = "Test du Visage KPOP";
+      snsDesc = "À quelle agence de divertissement K-POP ressemble mon visage ?";
+    } else if(langType == "id") {
+      // 인도네시아어 번역
+      snsTitle = "Tes Wajah KPOP";
+      snsDesc = "Wajah saya menyerupai agensi hiburan K-POP yang mana?";
+    } else if(langType == "ja") {
+      // 일본어 번역
+      snsTitle = "KPOP顔診断テスト";
+      snsDesc = "私の顔はK-POPエンターテインメント事務所にどれくらい似ているでしょうか？";
+    } else if(langType == "nl") {
+      // 네덜란드어 번역
+      snsTitle = "KPOP Gezichtstest";
+      snsDesc = "Hoe lijkt mijn gezicht op K-POP entertainmentbureaus?";
+    } else if(langType == "pl") {
+      // 폴란드어 번역
+      snsTitle = "Test twarzy KPOP";
+      snsDesc = "Jakie są podobieństwa mojej twarzy do agencji rozrywkowych K-POP?";
+    } else if(langType == "pt") {
+      // 포르투갈어 번역
+      snsTitle = "Teste de Rosto KPOP";
+      snsDesc = "Qual é a semelhança do meu rosto com as agências de entretenimento K-POP?";
+    } else if(langType == "ru") {
+      // 러시아어 번역
+      snsTitle = "Тест на лицо KPOP";
+      snsDesc = "Какое сходство моего лица с агентствами развлечений K-POP?";
+    } else if(langType == "tr") {
+      // 터키어 번역
+      snsTitle = "KPOP Yüz Testi";
+      snsDesc = "Yüzüm K-POP eğlence ajanslarına ne kadar benziyor?";
+    } else if(langType == "uk") {
+      // 우크라이나어 번역
+      snsTitle = "Тест на обличчя KPOP";
+      snsDesc = "До яких агентств розваг K-POP схоже моє обличчя?";
+    } else if(langType == "vi") {
+      // 베트남어 번역
+      snsTitle = "Kiểm Tra Khuôn Mặt KPOP";
+      snsDesc = "Gương mặt của tôi giống với công ty giải trí K-POP nào?";
+    } else if(langType == "zh") {
+      // 중국어 번역
+      snsTitle = "KPOP脸部测试";
+      snsDesc = "我的脸与K-POP娱乐公司相似吗？";
+    } else {
+      // 영어 번역
+      snsTitle = "KPOP Face Test";
+      snsDesc = "What is my facial resemblance to K-POP entertainment agencies?";
+    }
   } else {
-    thisUrl = "https://moony01.com/kpop-companies-face/";
-    snsTitle = "KPOP 소속사 얼굴상 테스트";
+    thisUrl = loc;
+    snsTitle = "KPOP 얼굴상 테스트";
     snsDesc = "내 얼굴은 K-POP 엔터 소속사중 어떤 얼굴상일까?";
   }
 
@@ -159,27 +219,265 @@ async function predict() {
   prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability))
   console.log(prediction[0].className);
   var resultTitle, resultExplain, resultCeleb;
+  langType = location.pathname.split("/")[1];
   if (document.getElementById("gender").checked) {
     switch (prediction[0].className) {
       case "sm":
-        resultTitle = "SM상";
-        resultExplain = "#꽃미남, #짙은 쌍커풀, #밝은 인상";
-        resultCeleb = "SM 소속 연예인: NCT, 동방신기, 샤이니, 슈퍼주니어, 엑소";
+        if(!langType == "" || !langType == null || !langType == "ko") {
+          if(langType == "en") {
+            // 영어 번역
+            resultTitle = "SM Face Type";
+            resultExplain = "#Flower Boy, #Deep Double Eyelids, #Classic Handsome";
+            resultCeleb = "Celebrities from SM Entertainment: Super Junior's Kim Hee-chul, Super Junior's Choi Si-won, TVXQ's Hero Jaejoong, SHINee's Taemin, SHINee's Minho, EXO's Kai, NCT's Taeyong";
+          } else if(langType == "de") {
+            // 독일어 번역
+            resultTitle = "SM Gesichtstyp";
+            resultExplain = "#Blumenjunge, #Tiefe Doppelte Augenlider, #Klassisch Hübsch";
+            resultCeleb = "Berühmtheiten von SM Entertainment: Super Junior's Kim Hee-chul, Super Junior's Choi Si-won, TVXQ's Hero Jaejoong, SHINee's Taemin, SHINee's Minho, EXO's Kai, NCT's Taeyong";
+          } else if(langType == "es") {
+            // 스페인어 번역
+            resultTitle = "Tipo de Rostro de SM";
+            resultExplain = "#Chico de Flores, #Párpados Dobles Profundos, #Galan Clásico";
+            resultCeleb = "Celebridades de SM Entertainment: Kim Hee-chul de Super Junior, Choi Si-won de Super Junior, Hero Jaejoong de TVXQ, Taemin de SHINee, Minho de SHINee, Kai de EXO, Taeyong de NCT";
+          } else if(langType == "fr") {
+            // 프랑스어 번역
+            resultTitle = "Type de Visage SM";
+            resultExplain = "#Beau Garçon, #Paupières Doubles Profondes, #Beau Classique";
+            resultCeleb = "Célébrités de SM Entertainment: Kim Hee-chul de Super Junior, Choi Si-won de Super Junior, Hero Jaejoong de TVXQ, Taemin de SHINee, Minho de SHINee, Kai de EXO, Taeyong de NCT";
+          } else if(langType == "id") {
+            // 인도네시아어 번역
+            resultTitle = "Tipe Wajah SM";
+            resultExplain = "#Flower Boy, #Lipatan Mata Ganda Dalam, #Ganteng Klasik";
+            resultCeleb = "Selebriti dari SM Entertainment: Kim Hee-chul dari Super Junior, Choi Si-won dari Super Junior, Hero Jaejoong dari TVXQ, Taemin dari SHINee, Minho dari SHINee, Kai dari EXO, Taeyong dari NCT";
+          } else if(langType == "ja") {
+            // 일본어 번역
+            resultTitle = "SMの顔タイプ";
+            resultExplain = "#フラワーボーイ、#深い二重瞼、#クラシックハンサム";
+            resultCeleb = "SMエンターテインメントの有名人：スーパージュニアのキム・ヒチョル、スーパージュニアのチェ・シウォン、東方神起のヒーロー・ジェジュン、SHINeeのテミン、SHINeeのミンホ、EXOのカイ、NCTのテヨン";
+          } else if(langType == "nl") {
+            // 네덜란드어 번역
+            resultTitle = "SM Gezichtstype";
+            resultExplain = "#Bloemenjongen, #Diepe Dubbele Oogleden, #Klassiek Knap";
+            resultCeleb = "Beroemdheden van SM Entertainment: Kim Hee-chul van Super Junior, Choi Si-won van Super Junior, Hero Jaejoong van TVXQ, Taemin van SHINee, Minho van SHINee, Kai van EXO, Taeyong van NCT";
+          } else if(langType == "pl") {
+            // 폴란드어 번역
+            resultTitle = "Typ Twarzy SM";
+            resultExplain = "#Chłopak Kwiatowy, #Głębokie Podwójne Powieki, #Klasyczny Przystojny";
+            resultCeleb = "Celebryci z SM Entertainment: Kim Hee-chul z Super Junior, Choi Si-won z Super Junior, Hero Jaejoong z TVXQ, Taemin z SHINee, Minho z SHINee, Kai z EXO, Taeyong z NCT";
+          } else if(langType == "pt") {
+            // 포르투갈어 번역
+            resultTitle = "Tipo de Rosto SM";
+            resultExplain = "#Rapaz Flor, #Pálpebras Duplas Profundas, #Bonito Clássico";
+            resultCeleb = "Celebridades da SM Entertainment: Kim Hee-chul do Super Junior, Choi Si-won do Super Junior, Hero Jaejoong do TVXQ, Taemin do SHINee, Minho do SHINee, Kai do EXO, Taeyong do NCT";
+          } else if(langType == "ru") {
+            // 러시아어 번역
+            resultTitle = "Тип лица SM";
+            resultExplain = "#Цветочный парень, #Глубокие двойные веки, #Классическая красота";
+            resultCeleb = "Знаменитости из SM Entertainment: Ким Хи-чоль из Super Junior, Чхве Сы-вон из Super Junior, Хиро Джеджун из TVXQ, Тэмин из SHINee, Минхо из SHINee, Кай из EXO, Тэён из NCT";
+          } else if(langType == "tr") {
+            // 터키어 번역
+            resultTitle = "SM Yüz Tipi";
+            resultExplain = "#Çiçek Çocuk, #Derin Çift Göz Kapağı, #Klasik Yakışıklı";
+            resultCeleb = "SM Eğlence Ünlüleri: Super Junior'dan Kim Hee-chul, Super Junior'dan Choi Si-won, TVXQ'dan Hero Jaejoong, SHINee'den Taemin, SHINee'den Minho, EXO'dan Kai, NCT'den Taeyong";
+          } else if(langType == "uk") {
+            // 우크라이나어 번역
+            resultTitle = "Тип обличчя SM";
+            resultExplain = "#Квітковий Хлопець, #Глибокий Подвійний Перетинка, #Класично Гарний";
+            resultCeleb = "Знаменитості від SM Entertainment: Кім Хі-чоль з Super Junior, Чхве Сі-вон з Super Junior, Герой Джеджун з TVXQ, Темін з SHINee, Мінхо з SHINee, Кай з EXO, Тейон з NCT";
+          } else if(langType == "vi") {
+            // 베트남어 번역
+            resultTitle = "Kiểu Mặt của SM";
+            resultExplain = "#Hoàng Tử Hoa, #Mí Mắt kép Sâu, #Đẹp Trai Cổ điển";
+            resultCeleb = "Các nghệ sĩ nổi tiếng thuộc công ty giải trí SM: Kim Hee-chul của Super Junior, Choi Si-won của Super Junior, Hero Jaejoong của TVXQ, Taemin của SHINee, Minho của SHINee, Kai của EXO, Taeyong của NCT";
+          } else if(langType == "zh") {
+            // 중국어 번역
+            resultTitle = "SM脸型";
+            resultExplain = "#花美男, #深双眼皮, #经典帅气";
+            resultCeleb = "SM娱乐公司的名人：Super Junior的金希澈，Super Junior的崔始源，TVXQ的张艺兴，SHINee的李泰民，SHINee的崔珉豪，EXO的金钟大，NCT的李泰容";
+          } else {
+            // 영어 번역
+            resultTitle = "SM Face Type";
+            resultExplain = "#Flower Boy, #Deep Double Eyelids, #Classic Handsome";
+            resultCeleb = "Celebrities from SM Entertainment: Super Junior's Kim Hee-chul, Super Junior's Choi Si-won, TVXQ's Hero Jaejoong, SHINee's Taemin, SHINee's Minho, EXO's Kai, NCT's Taeyong";
+          }
+        } else {
+          resultTitle = "SM얼굴상";
+          resultExplain = "#꽃미남, #짙은 쌍커풀, #정석 미남";
+          resultCeleb = "SM출신 연예인: 슈퍼주니어 김희철, 슈퍼주니어 최시원, 동방신기 영웅재중, 샤이니 태민, 샤이니 민호, 엑소 카이, NCT 태용";
+        }
         break;
       case "jyp":
-        resultTitle = "JYP상";
-        resultExplain = "#무쌍커풀, #매력있는 비주얼";
-        resultCeleb = "JYP 소속 연예인: 2PM, 2AM, GOT7, 스트레이 키즈";
+        if(!langType == "" || !langType == null || !langType == "ko") {
+          if(langType == "en") {
+            // 영어 번역
+            resultTitle = "JYP Face Type";
+            resultExplain = "#Monolids, #Charming Visuals, #Gentle Impression";
+            resultCeleb = "Celebrities from JYP Entertainment: Rain, 2PM's Lee Junho, 2PM's Wooyoung, 2AM's Jung Jinwoon, GOT7's Youngjae, DAY6's Dowoon";
+          } else if(langType == "de") {
+            // 독일어 번역
+            resultTitle = "JYP Gesichtstyp";
+            resultExplain = "#Monolids, #Charmante Optik, #Sanfter Eindruck";
+            resultCeleb = "Berühmtheiten von JYP Entertainment: Rain, Lee Junho von 2PM, Wooyoung von 2PM, Jung Jinwoon von 2AM, Youngjae von GOT7, Dowoon von DAY6";
+          } else if(langType == "es") {
+            // 스페인어 번역
+            resultTitle = "Tipo de Rostro de JYP";
+            resultExplain = "#Monolidos, #Atractivo Visual, #Impresión Gentil";
+            resultCeleb = "Celebridades de JYP Entertainment: Rain, Lee Junho de 2PM, Wooyoung de 2PM, Jung Jinwoon de 2AM, Youngjae de GOT7, Dowoon de DAY6";
+          } else if(langType == "fr") {
+            // 프랑스어 번역
+            resultTitle = "Type de Visage de JYP";
+            resultExplain = "#Monolids, #Visuels Charmants, #Impression Douce";
+            resultCeleb = "Célébrités de JYP Entertainment: Rain, Lee Junho de 2PM, Wooyoung de 2PM, Jung Jinwoon de 2AM, Youngjae de GOT7, Dowoon de DAY6";
+          } else if(langType == "id") {
+            // 인도네시아어 번역
+            resultTitle = "Tipe Wajah JYP";
+            resultExplain = "#Kelopak Mata Tunggal, #Visual Menawan, #Kesan Lembut";
+            resultCeleb = "Selebriti dari JYP Entertainment: Rain, Lee Junho dari 2PM, Wooyoung dari 2PM, Jung Jinwoon dari 2AM, Youngjae dari GOT7, Dowoon dari DAY6";
+          } else if(langType == "ja") {
+            // 일본어 번역
+            resultTitle = "JYPの顔タイプ";
+            resultExplain = "#一重瞼、#魅力的なビジュアル、#柔らかな印象";
+            resultCeleb = "JYPエンターテインメントの有名人：レイン、2PMのイ・ジュンホ、2PMのウヨン、2AMのジョン・ジヌン、GOT7のヨンジェ、DAY6のドウン";
+          } else if(langType == "nl") {
+            // 네덜란드어 번역
+            resultTitle = "JYP Gezichtstype";
+            resultExplain = "#Enkele Oogleden, #Aantrekkelijke Uitstraling, #Zachte Indruk";
+            resultCeleb = "Beroemdheden van JYP Entertainment: Rain, Lee Junho van 2PM, Wooyoung van 2PM, Jung Jinwoon van 2AM, Youngjae van GOT7, Dowoon van DAY6";
+          } else if(langType == "pl") {
+            // 폴란드어 번역
+            resultTitle = "Typ Twarzy JYP";
+            resultExplain = "#Powieki Jednokrotne, #Urokliwe Wizualne, #Łagodne Wrażenie";
+            resultCeleb = "Celebryci z JYP Entertainment: Rain, Lee Junho z 2PM, Wooyoung z 2PM, Jung Jinwoon z 2AM, Youngjae z GOT7, Dowoon z DAY6";
+          } else if(langType == "pt") {
+            // 포르투갈어 번역
+            resultTitle = "Tipo de Rosto JYP";
+            resultExplain = "#Pálpebras Monolids, #Visual Encantador, #Impressão Suave";
+            resultCeleb = "Celebridades da JYP Entertainment: Rain, Lee Junho do 2PM, Wooyoung do 2PM, Jung Jinwoon do 2AM, Youngjae do GOT7, Dowoon do DAY6";
+          } else if(langType == "ru") {
+            // 러시아어 번역
+            resultTitle = "Тип лица JYP";
+            resultExplain = "#Моно-веки, #Очаровательная внешность, #Мягкое впечатление";
+            resultCeleb = "Знаменитости из JYP Entertainment: Рейн, Ли Чжунхо из 2PM, Ву Ён из 2PM, Чон Чинун из 2AM, Йондже из GOT7, Довун из DAY6";
+          } else if(langType == "tr") {
+            // 터키어 번역
+            resultTitle = "JYP Yüz Tipi";
+            resultExplain = "#Tek Göz Kapakları, #Büyüleyici Görünüm, #Yumuşak İzlenim";
+            resultCeleb = "JYP Eğlence Ünlüleri: Rain, 2PM'den Lee Junho, 2PM'den Wooyoung, 2AM'den Jung Jinwoon, GOT7'den Youngjae, DAY6'den Dowoon";
+          } else if(langType == "uk") {
+            // 우크라이나어 번역
+            resultTitle = "Тип обличчя JYP";
+            resultExplain = "#Моно-повіки, #Чарівна Зовнішність, #М'який Враження";
+            resultCeleb = "Знаменитості від JYP Entertainment: Рейн, Лі Чжунхо з 2PM, Ву Ён з 2PM, Чон Чинун з 2AM, Йондже з GOT7, Довун з DAY6";
+          } else if(langType == "vi") {
+            // 베트남어 번역
+            resultTitle = "Kiểu Mặt của JYP";
+            resultExplain = "#Mắt Kép, #Visual Quyến Rũ, #Ấn Tượng Dịu Dàng";
+            resultCeleb = "Các nghệ sĩ nổi tiếng thuộc công ty giải trí JYP: Rain, Lee Junho của 2PM, Wooyoung của 2PM, Jung Jinwoon của 2AM, Youngjae của GOT7, Dowoon của DAY6";
+          } else if(langType == "zh") {
+            // 중국어 번역
+            resultTitle = "JYP脸型";
+            resultExplain = "#单眼皮, #有魅力的外貌, #温柔的印象";
+            resultCeleb = "JYP娱乐公司的名人：Rain，2PM的李俊昊，2PM的玉荣，2AM的郑振云，GOT7的燕宰，DAY6的道云";
+          } else {
+            // 영어 번역
+            resultTitle = "JYP Face Type";
+            resultExplain = "#Monolids, #Charming Visuals, #Gentle Impression";
+            resultCeleb = "Celebrities from JYP Entertainment: Rain, 2PM's Lee Junho, 2PM's Wooyoung, 2AM's Jung Jinwoon, GOT7's Youngjae, DAY6's Dowoon";
+          }
+        } else {
+          resultTitle = "JYP상";
+          resultExplain = "#무쌍커풀, #매력있는 비주얼 #부드러운 인상";
+          resultCeleb = "JYP출신 연예인: 비, 2PM 이준호, 2PM 우영, 2AM 정진운, GOT7 영재, DAY6 도운";
+        }
         break;
       case "yg":
-        resultTitle = "YG상";
-        resultExplain = "#개성있는 비주얼, #HIP #스타일리쉬 #쿨한 인상";
-        resultCeleb = "YG 소속 연예인: 빅뱅, 위너, 아이콘, 트레저";
+        if(!langType == "" || !langType == null || !langType == "ko") {
+          if(langType == "en") {
+          // 영어 번역
+          resultTitle = "YG Face Type";
+          resultExplain = "#Distinctive Visuals, #Hip-hop Style, #Playful";
+          resultCeleb = "Celebrities from YG Entertainment: BIGBANG's G-Dragon, BIGBANG's Taeyang, BIGBANG's Daesung, WINNER's Song Minho, WINNER's Kang Seungyoon, iKON's B.I, iKON's Bobby";
+          } else if(langType == "de") {
+          // 독일어 번역
+          resultTitle = "YG Gesichtstyp";
+          resultExplain = "#Besondere Optik, #Hip-hop Stil, #Verspielt";
+          resultCeleb = "Berühmtheiten von YG Entertainment: G-Dragon von BIGBANG, Taeyang von BIGBANG, Daesung von BIGBANG, Song Minho von WINNER, Kang Seungyoon von WINNER, B.I von iKON, Bobby von iKON";
+          } else if(langType == "es") {
+          // 스페인어 번역
+          resultTitle = "Tipo de Rostro de YG";
+          resultExplain = "#Visuales Distintivos, #Estilo Hip-hop, #Travieso";
+          resultCeleb = "Celebridades de YG Entertainment: G-Dragon de BIGBANG, Taeyang de BIGBANG, Daesung de BIGBANG, Song Minho de WINNER, Kang Seungyoon de WINNER, B.I de iKON, Bobby de iKON";
+          } else if(langType == "fr") {
+          // 프랑스어 번역
+          resultTitle = "Type de Visage de YG";
+          resultExplain = "#Visuels Distinctifs, #Style Hip-hop, #Esprit Facétieux";
+          resultCeleb = "Célébrités de YG Entertainment: G-Dragon de BIGBANG, Taeyang de BIGBANG, Daesung de BIGBANG, Song Minho de WINNER, Kang Seungyoon de WINNER, B.I de iKON, Bobby de iKON";
+          } else if(langType == "id") {
+          // 인도네시아어 번역
+          resultTitle = "Tipe Wajah YG";
+          resultExplain = "#Visual Khas, #Gaya Hip-hop, #Nakal";
+          resultCeleb = "Selebriti dari YG Entertainment: G-Dragon dari BIGBANG, Taeyang dari BIGBANG, Daesung dari BIGBANG, Song Minho dari WINNER, Kang Seungyoon dari WINNER, B.I dari iKON, Bobby dari iKON";
+          } else if(langType == "ja") {
+          // 일본어 번역
+          resultTitle = "YGの顔タイプ";
+          resultExplain = "#個性的なビジュアル、#ヒップホップスタイル、#いたずらっ子";
+          resultCeleb = "YGエンターテインメントの有名人：BIGBANGのG-ドラゴン、BIGBANGのタヨン、BIGBANGのデソン、WINNERのソン・ミンホ、WINNERのカン・スンユン、iKONのB.I、iKONのボビー";
+          } else if(langType == "nl") {
+          // 네덜란드어 번역
+          resultTitle = "YG Gezichtstype";
+          resultExplain = "#Opvallende Uitstraling, #Hip-hop Stijl, #Speels";
+          resultCeleb = "Beroemdheden van YG Entertainment: G-Dragon van BIGBANG, Taeyang van BIGBANG, Daesung van BIGBANG, Song Minho van WINNER, Kang Seungyoon van WINNER, B.I van iKON, Bobby van iKON";
+          } else if(langType == "pl") {
+          // 폴란드어 번역
+          resultTitle = "Typ Twarzy YG";
+          resultExplain = "#Charakterystyczna Wizualizacja, #Styl Hip-hop, #Figlarny";
+          resultCeleb = "Celebryci z YG Entertainment: G-Dragon z BIGBANG, Taeyang z BIGBANG, Daesung z BIGBANG, Song Minho z WINNER, Kang Seungyoon z WINNER, B.I z iKON, Bobby z iKON";
+          } else if(langType == "pt") {
+          // 포르투갈어 번역
+          resultTitle = "Tipo de Rosto YG";
+          resultExplain = "#Visuais Distintos, #Estilo Hip-hop, #Traquinas";
+          resultCeleb = "Celebridades da YG Entertainment: G-Dragon do BIGBANG, Taeyang do BIGBANG, Daesung do BIGBANG, Song Minho do WINNER, Kang Seungyoon do WINNER, B.I do iKON, Bobby do iKON";
+          } else if(langType == "ru") {
+          // 러시아어 번역
+          resultTitle = "Тип лица YG";
+          resultExplain = "#Выразительная внешность, #Хип-хоп стиль, #Шалун";
+          resultCeleb = "Знаменитости из YG Entertainment: G-Dragon из BIGBANG, Taeyang из BIGBANG, Daesung из BIGBANG, Song Minho из WINNER, Kang Seungyoon из WINNER, B.I из iKON, Bobby из iKON";
+          } else if(langType == "tr") {
+          // 터키어 번역
+          resultTitle = "YG Yüz Tipi";
+          resultExplain = "#Belirgin Görünüm, #Hip-hop Tarzı, #Şakacı";
+          resultCeleb = "YG Eğlence Ünlüleri: BIGBANG'den G-Dragon, BIGBANG'den Taeyang, BIGBANG'den Daesung, WINNER'dan Song Minho, WINNER'dan Kang Seungyoon, iKON'dan B.I, iKON'dan Bobby";
+          } else if(langType == "uk") {
+          // 우크라이나어 번역
+          resultTitle = "Тип обличчя YG";
+          resultExplain = "#Характерний Вигляд, #Стиль Хіп-хоп, #Жартівливий";
+          resultCeleb = "Знаменитості від YG Entertainment: G-Dragon з BIGBANG, Taeyang з BIGBANG, Daesung з BIGBANG, Song Minho з WINNER, Kang Seungyoon з WINNER, B.I з iKON, Bobby з iKON";
+          } else if(langType == "vi") {
+          // 베트남어 번역
+          resultTitle = "Kiểu Mặt của YG";
+          resultExplain = "#Visual Đặc biệt, #Phong cách Hip-hop, #Trẻ trung";
+          resultCeleb = "Các nghệ sĩ nổi tiếng thuộc công ty giải trí YG: G-Dragon của BIGBANG, Taeyang của BIGBANG, Daesung của BIGBANG, Song Minho của WINNER, Kang Seungyoon của WINNER, B.I của iKON, Bobby của iKON";
+          } else if(langType == "zh") {
+          // 중국어 번역
+          resultTitle = "YG脸型";
+          resultExplain = "#个性化外貌, #嘻哈风格, #顽皮";
+          resultCeleb = "YG娱乐公司的名人：BIGBANG的G-Dragon，BIGBANG的太阳，BIGBANG的大胜，WINNER的宋旻浩，WINNER的姜胜允，iKON的B.I，iKON的Bobby";
+          } else {
+          // 영어 번역
+          resultTitle = "YG Face Type";
+          resultExplain = "#Distinctive Visuals, #Hip-hop Style, #Playful";
+          resultCeleb = "Celebrities from YG Entertainment: BIGBANG's G-Dragon, BIGBANG's Taeyang, BIGBANG's Daesung, WINNER's Song Minho, WINNER's Kang Seungyoon, iKON's B.I, iKON's Bobby";
+          }
+        } else {
+          resultTitle = "YG상";
+          resultExplain = "#개성있는 비주얼 #힙합스타일 #장난꾸러기";
+          resultCeleb = "YG출신 연예인: 빅뱅 지드래곤, 빅뱅 태양, 빅뱅 대성, 위너 송민호, 위너 강승윤, 아이콘 비아이, 아이콘 바비";
+        }
         break;
       case "hybe":
         resultTitle = "HYBE상";
         resultExplain = "#다양한 매력";
-        resultCeleb = "HYBE 소속 연예인: 방탄소년단, 투모로우바이투게더, 세븐틴, 엔하이픈";
+        resultCeleb = "HYBE출신 연예인: 방탄소년단, 투모로우바이투게더, 세븐틴, 엔하이픈";
         break;
       default:
         resultTitle = "알수없음";
@@ -189,24 +487,299 @@ async function predict() {
   } else {
     switch (prediction[0].className) {
       case "sm":
-        resultTitle = "SM상";
-        resultExplain = "#토끼상 #최강 비주얼 #밝은 인상";
-        resultCeleb = "SM 소속 연예인: 소녀시대, 레드벨벳, 에스파, 에프엑스, 보아";
+        if(!langType == "" || !langType == null || !langType == "ko") {
+          if(langType == "en") {
+          // 영어 번역
+          resultTitle = "SM Face Type";
+          resultExplain = "#Bunny-like Face, #Ultimate Visual, #Bright Impression";
+          resultCeleb = "Celebrities from SM Entertainment: Seo Hyun-jin, Lee Yeon-hee, f(x)'s Sulli, Girls' Generation's Taeyeon, Red Velvet's Irene, aespa's Winter, aespa's Karina";
+
+          } else if(langType == "de") {
+          // 독일어 번역
+          resultTitle = "SM Gesichtstyp";
+          resultExplain = "#Hasenartiges Gesicht, #Ultimatives Aussehen, #Heller Eindruck";
+          resultCeleb = "Berühmtheiten von SM Entertainment: Seo Hyun-jin, Lee Yeon-hee, f(x)'s Sulli, Girls' Generation's Taeyeon, Red Velvet's Irene, aespa's Winter, aespa's Karina";
+
+          } else if(langType == "es") {
+          // 스페인어 번역
+          resultTitle = "Tipo de Rostro de SM";
+          resultExplain = "#Rostro de Conejo, #Visual Definitivo, #Impresión Brillante";
+          resultCeleb = "Celebridades de SM Entertainment: Seo Hyun-jin, Lee Yeon-hee, Sulli de f(x), Taeyeon de Girls' Generation, Irene de Red Velvet, Winter de aespa, Karina de aespa";
+
+          } else if(langType == "fr") {
+          // 프랑스어 번역
+          resultTitle = "Type de Visage SM";
+          resultExplain = "#Visage de Lapin, #Visuel Ultime, #Impression Lumineuse";
+          resultCeleb = "Célébrités de SM Entertainment: Seo Hyun-jin, Lee Yeon-hee, Sulli de f(x), Taeyeon de Girls' Generation, Irene de Red Velvet, Winter de aespa, Karina de aespa";
+
+          } else if(langType == "id") {
+          // 인도네시아어 번역
+          resultTitle = "Tipe Wajah SM";
+          resultExplain = "#Wajah Kelinci, #Visual Ultimate, #Impresi Cerah";
+          resultCeleb = "Selebriti dari SM Entertainment: Seo Hyun-jin, Lee Yeon-hee, Sulli dari f(x), Taeyeon dari Girls' Generation, Irene dari Red Velvet, Winter dari aespa, Karina dari aespa";
+
+          } else if(langType == "ja") {
+          // 일본어 번역
+          resultTitle = "SMの顔タイプ";
+          resultExplain = "#ウサギのような顔、#究極のビジュアル、#明るい印象";
+          resultCeleb = "SMエンターテインメントの有名人：ソ・ヒョンジン、イ・ヨニ、f(x)のスルギ、少女時代のテヨン、Red Velvetのアイリーン、aespaのウィンター、aespaのカリーナ";
+
+          } else if(langType == "nl") {
+          // 네덜란드어 번역
+          resultTitle = "SM Gezichtstype";
+          resultExplain = "#Konijnachtig Gezicht, #Ultiem Visueel, #Heldere Indruk";
+          resultCeleb = "Beroemdheden van SM Entertainment: Seo Hyun-jin, Lee Yeon-hee, Sulli van f(x), Taeyeon van Girls' Generation, Irene van Red Velvet, Winter van aespa, Karina van aespa";
+
+          } else if(langType == "pl") {
+          // 폴란드어 번역
+          resultTitle = "Typ Twarzy SM";
+          resultExplain = "#Twarz Królika, #Ostateczny Wygląd, #Jasne Wrażenie";
+          resultCeleb = "Celebryci z SM Entertainment: Seo Hyun-jin, Lee Yeon-hee, Sulli z f(x), Taeyeon z Girls' Generation, Irene z Red Velvet, Winter z aespa, Karina z aespa";
+
+          } else if(langType == "pt") {
+          // 포르투갈어 번역
+          resultTitle = "Tipo de Rosto SM";
+          resultExplain = "#Rosto de Coelho, #Visual Definitivo, #Impressão Brilhante";
+          resultCeleb = "Celebridades da SM Entertainment: Seo Hyun-jin, Lee Yeon-hee, Sulli do f(x), Taeyeon do Girls' Generation, Irene do Red Velvet, Winter do aespa, Karina do aespa";
+
+          } else if(langType == "ru") {
+          // 러시아어 번역
+          resultTitle = "Тип лица SM";
+          resultExplain = "#Лицо Кролика, #Воплощение Красоты, #Светлое Впечатление";
+          resultCeleb = "Знаменитости из SM Entertainment: Со Хёнджин, Ли Ёнхи, Sulli из f(x), Тэён из Girls' Generation, Айрин из Red Velvet, Винтер из aespa, Карина из aespa";
+
+          } else if(langType == "tr") {
+          // 터키어 번역
+          resultTitle = "SM Yüz Tipi";
+          resultExplain = "#Tavşan Benzeri Yüz, #Mükemmel Görünüm, #Parlak İzlenim";
+          resultCeleb = "SM Eğlence Ünlüleri: Seo Hyun-jin, Lee Yeon-hee, f(x)'in Sulli, Girls' Generation'dan Taeyeon, Red Velvet'den Irene, aespa'dan Winter, aespa'dan Karina";
+
+          } else if(langType == "uk") {
+          // 우크라이나어 번역
+          resultTitle = "Тип обличчя SM";
+          resultExplain = "#Обличчя Зайця, #Найкращий Вигляд, #Світлий Враження";
+          resultCeleb = "Знаменитості від SM Entertainment: Сео Хьонджін, Лі Ёнхі, Sulli з f(x), Taeyeon з Girls' Generation, Irene з Red Velvet, Winter з aespa, Karina з aespa";
+
+          } else if(langType == "vi") {
+          // 베트남어 번역
+          resultTitle = "Kiểu Mặt của SM";
+          resultExplain = "#Gương mặt giống thỏ, #Visual tối ưu, #Ấn tượng sáng";
+          resultCeleb = "Các nghệ sĩ nổi tiếng thuộc công ty giải trí SM: Seo Hyun-jin, Lee Yeon-hee, Sulli của f(x), Taeyeon của Girls' Generation, Irene của Red Velvet, Winter của aespa, Karina của aespa";
+
+          } else if(langType == "zh") {
+          // 중국어 번역
+          resultTitle = "SM脸型";
+          resultExplain = "#兔子般的脸型, #终极视觉, #明亮印象";
+          resultCeleb = "SM娱乐公司的名人：徐玄振，李妍希，f(x)的金秀荣，少女时代的太妍，Red Velvet的Irene，aespa的Winter，aespa的Karina";
+          } else {
+          // 영어 번역
+          resultTitle = "SM Face Type";
+          resultExplain = "#Bunny-like Face, #Ultimate Visual, #Bright Impression";
+          resultCeleb = "Celebrities from SM Entertainment: Seo Hyun-jin, Lee Yeon-hee, f(x)'s Sulli, Girls' Generation's Taeyeon, Red Velvet's Irene, aespa's Winter, aespa's Karina";
+          }
+        } else {
+          resultTitle = "SM얼굴상";
+          resultExplain = "#토끼상 #최강 비주얼 #밝은 인상";
+          resultCeleb = "SM출신 연예인: 서현진, 이연희, FX설리, 소녀시대 태연, 래드벨벳 아이린, 에스파 윈터, 에스파 카리나";
+        }
         break;
       case "jyp":
-        resultTitle = "JYP상";
-        resultExplain = "#여우상 #매력있는 비주얼";
-        resultCeleb = "JYP 소속 연예인: 원더걸스, 트와이스, ITZY, 미쓰에이, 엔믹스";
+        if(!langType == "" || !langType == null || !langType == "ko") {
+          if(langType == "en") {
+          // 영어 번역
+          resultTitle = "JYP Face Type";
+          resultExplain = "#Fox-like Face, #Charming Visual";
+          resultCeleb = "Celebrities from JYP Entertainment: Wonder Girls' Ahn So-hee, TWICE's Dahyun, TWICE's Sana, TWICE's Tzuyu, ITZY's Yeji, ITZY's Chaeryeong, ENHYPEN's Sunghoon";
+
+          } else if(langType == "de") {
+          // 독일어 번역
+          resultTitle = "JYP Gesichtstyp";
+          resultExplain = "#Fuchsgesicht, #Charmantes Aussehen";
+          resultCeleb = "Berühmtheiten von JYP Entertainment: Ahn So-hee von Wonder Girls, Dahyun von TWICE, Sana von TWICE, Tzuyu von TWICE, Yeji von ITZY, Chaeryeong von ITZY, Sunghoon von ENHYPEN";
+
+          } else if(langType == "es") {
+          // 스페인어 번역
+          resultTitle = "Tipo de Rostro de JYP";
+          resultExplain = "#Cara de Zorro, #Atractivo Visual";
+          resultCeleb = "Celebridades de JYP Entertainment: Ahn So-hee de Wonder Girls, Dahyun de TWICE, Sana de TWICE, Tzuyu de TWICE, Yeji de ITZY, Chaeryeong de ITZY, Sunghoon de ENHYPEN";
+
+          } else if(langType == "fr") {
+          // 프랑스어 번역
+          resultTitle = "Type de Visage de JYP";
+          resultExplain = "#Visage de Renard, #Visuel Charmant";
+          resultCeleb = "Célébrités de JYP Entertainment: Ahn So-hee des Wonder Girls, Dahyun de TWICE, Sana de TWICE, Tzuyu de TWICE, Yeji d'ITZY, Chaeryeong d'ITZY, Sunghoon d'ENHYPEN";
+
+          } else if(langType == "id") {
+          // 인도네시아어 번역
+          resultTitle = "Tipe Wajah JYP";
+          resultExplain = "#Wajah Rubah, #Visual Menawan";
+          resultCeleb = "Selebriti dari JYP Entertainment: Ahn So-hee dari Wonder Girls, Dahyun dari TWICE, Sana dari TWICE, Tzuyu dari TWICE, Yeji dari ITZY, Chaeryeong dari ITZY, Sunghoon dari ENHYPEN";
+
+          } else if(langType == "ja") {
+          // 일본어 번역
+          resultTitle = "JYPの顔タイプ";
+          resultExplain = "#キツネのような顔、#魅力的なビジュアル";
+          resultCeleb = "JYPエンターテインメントの有名人：ワンダーガールズのアン・ソヒ、TWICEのダヒョン、TWICEのサナ、TWICEのツウィ、ITZYのイェジ、ITZYのチェリョン、ENHYPENのスンフン";
+
+          } else if(langType == "nl") {
+          // 네덜란드어 번역
+          resultTitle = "JYP Gezichtstype";
+          resultExplain = "#Vosachtig Gezicht, #Betoverende Uitstraling";
+          resultCeleb = "Beroemdheden van JYP Entertainment: Ahn So-hee van Wonder Girls, Dahyun van TWICE, Sana van TWICE, Tzuyu van TWICE, Yeji van ITZY, Chaeryeong van ITZY, Sunghoon van ENHYPEN";
+
+          } else if(langType == "pl") {
+          // 폴란드어 번역
+          resultTitle = "Typ Twarzy JYP";
+          resultExplain = "#Twarz Lis, #Urokliwe Wrażenie";
+          resultCeleb = "Celebryci z JYP Entertainment: Ahn So-hee z Wonder Girls, Dahyun z TWICE, Sana z TWICE, Tzuyu z TWICE, Yeji z ITZY, Chaeryeong z ITZY, Sunghoon z ENHYPEN";
+
+          } else if(langType == "pt") {
+          // 포르투갈어 번역
+          resultTitle = "Tipo de Rosto JYP";
+          resultExplain = "#Rosto de Raposa, #Visual Encantador";
+          resultCeleb = "Celebridades da JYP Entertainment: Ahn So-hee do Wonder Girls, Dahyun do TWICE, Sana do TWICE, Tzuyu do TWICE, Yeji do ITZY, Chaeryeong do ITZY, Sunghoon do ENHYPEN";
+
+          } else if(langType == "ru") {
+          // 러시아어 번역
+          resultTitle = "Тип лица JYP";
+          resultExplain = "#Лицо Лисы, #Очаровательный Внешний Вид";
+          resultCeleb = "Знаменитости из JYP Entertainment: Ан Сохи из Wonder Girls, Дахьён из TWICE, Сана из TWICE, Цзюю из TWICE, Еджи из ITZY, Чхэрён из ITZY, Сунхун из ENHYPEN";
+
+          } else if(langType == "tr") {
+          // 터키어 번역
+          resultTitle = "JYP Yüz Tipi";
+          resultExplain = "#Tavşan Benzeri Yüz, #Çekici Görünüm";
+          resultCeleb = "JYP Eğlence Ünlüleri: Wonder Girls'den Ahn So-hee, TWICE'dan Dahyun, TWICE'dan Sana, TWICE'dan Tzuyu, ITZY'den Yeji, ITZY'den Chaeryeong, ENHYPEN'den Sunghoon";
+
+          } else if(langType == "uk") {
+          // 우크라이나어 번역
+          resultTitle = "Тип обличчя JYP";
+          resultExplain = "#Обличчя Лисиці, #Чарівний Зовнішній Вигляд";
+          resultCeleb = "Знаменитості від JYP Entertainment: Ан Сохі з Wonder Girls, Дахьон з TWICE, Сана з TWICE, Цзюю з TWICE, Еджи з ITZY, Чхерьон з ITZY, Сунхун з ENHYPEN";
+
+          } else if(langType == "vi") {
+          // 베트남어 번역
+          resultTitle = "Kiểu Mặt của JYP";
+          resultExplain = "#Gương Mặt Giống Cáo, #Visual Quyến Rũ";
+          resultCeleb = "Các nghệ sĩ nổi tiếng thuộc công ty giải trí JYP: Ahn So-hee của Wonder Girls, Dahyun của TWICE, Sana của TWICE, Tzuyu của TWICE, Yeji của ITZY, Chaeryeong của ITZY, Sunghoon của ENHYPEN";
+
+          } else if(langType == "zh") {
+          // 중국어 번역
+          resultTitle = "JYP脸型";
+          resultExplain = "#狐狸般的脸型, #迷人的外貌";
+          resultCeleb = "JYP娱乐公司的名人：Wonder Girls的安素熙，TWICE的多贤，TWICE的莎娜，TWICE的子瑜，ITZY的藝智，ITZY的采玲，ENHYPEN的成薰";
+          } else {
+          // 영어 번역
+          resultTitle = "JYP Face Type";
+          resultExplain = "#Fox-like Face, #Charming Visual";
+          resultCeleb = "Celebrities from JYP Entertainment: Wonder Girls' Ahn So-hee, TWICE's Dahyun, TWICE's Sana, TWICE's Tzuyu, ITZY's Yeji, ITZY's Chaeryeong, ENHYPEN's Sunghoon";
+          }
+        } else {
+          resultTitle = "JYP얼굴상";
+          resultExplain = "#여우상 #매력있는 비주얼";
+          resultCeleb = "JYP출신 연예인: 원더걸스 안소희, 트와이스 다현, 트와이스 사나, 트와이스 쯔위, ITZY 예지, ITZY 채령, 엔믹스 설윤";
+        }
         break;
       case "yg":
-        resultTitle = "YG상";
-        resultExplain = "#고양이상 #고급스러운 비주얼";
-        resultCeleb = "YG 소속 연예인: 2EN1, 블랙핑크, 이하이, 에픽하이";
+        if(!langType == "" || !langType == null || !langType == "ko") {
+          if(langType == "en") {
+          // 영어 번역
+          resultTitle = "YG Face Type";
+          resultExplain = "#Cat-like Face, #Sophisticated Visual";
+          resultCeleb = "Celebrities from YG Entertainment: 2NE1's CL, BLACKPINK's Jennie, BLACKPINK's Lisa, BLACKPINK's Jisoo, Lee Hi, Jeon Somi, Han Ye-seul";
+          } else if(langType == "de") {
+          // 독일어 번역
+          resultTitle = "YG Gesichtstyp";
+          resultExplain = "#Katzenartiges Gesicht, #Elegantes Aussehen";
+          resultCeleb = "Berühmtheiten von YG Entertainment: CL von 2NE1, Jennie von BLACKPINK, Lisa von BLACKPINK, Jisoo von BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "es") {
+          // 스페인어 번역
+          resultTitle = "Tipo de Rostro YG";
+          resultExplain = "#Rostro de Gato, #Visual Sofisticado";
+          resultCeleb = "Celebridades de YG Entertainment: CL de 2NE1, Jennie de BLACKPINK, Lisa de BLACKPINK, Jisoo de BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "fr") {
+          // 프랑스어 번역
+          resultTitle = "Type de Visage YG";
+          resultExplain = "#Visage de Chat, #Visuel Sophistiqué";
+          resultCeleb = "Célébrités de YG Entertainment: CL de 2NE1, Jennie de BLACKPINK, Lisa de BLACKPINK, Jisoo de BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "id") {
+          // 인도네시아어 번역
+          resultTitle = "Tipe Wajah YG";
+          resultExplain = "#Wajah Mirip Kucing, #Visual Elegan";
+          resultCeleb = "Selebriti dari YG Entertainment: CL dari 2NE1, Jennie dari BLACKPINK, Lisa dari BLACKPINK, Jisoo dari BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "ja") {
+          // 일본어 번역
+          resultTitle = "YG顔タイプ";
+          resultExplain = "#猫のような顔、#洗練されたビジュアル";
+          resultCeleb = "YGエンターテインメントの有名人：2NE1のCL、BLACKPINKのJennie、BLACKPINKのLisa、BLACKPINKのJisoo、Lee Hi、Jeon Somi、Han Ye-seul";
+
+          } else if(langType == "nl") {
+          // 네덜란드어 번역
+          resultTitle = "YG Gezichtstype";
+          resultExplain = "#Katachtig Gezicht, #Verfijnde Uitstraling";
+          resultCeleb = "Beroemdheden van YG Entertainment: CL van 2NE1, Jennie van BLACKPINK, Lisa van BLACKPINK, Jisoo van BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "pl") {
+          /// 폴란드어 번역
+          resultTitle = "Typ Twarzy YG";
+          resultExplain = "#Twarz Kociego Typu, #Wyrafinowany Wygląd";
+          resultCeleb = "Celebryci z YG Entertainment: CL z 2NE1, Jennie z BLACKPINK, Lisa z BLACKPINK, Jisoo z BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "pt") {
+          // 포르투갈어 번역
+          resultTitle = "Tipo de Rosto YG";
+          resultExplain = "#Rosto Estilo Gato, #Visual Sofisticado";
+          resultCeleb = "Celebridades da YG Entertainment: CL do 2NE1, Jennie do BLACKPINK, Lisa do BLACKPINK, Jisoo do BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "ru") {
+          // 러시아어 번역
+          resultTitle = "Тип лица YG";
+          resultExplain = "#Лицо, похожее на кошку, #Стильный образ";
+          resultCeleb = "Знаменитости из YG Entertainment: CL из 2NE1, Jennie из BLACKPINK, Lisa из BLACKPINK, Jisoo из BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "tr") {
+          // 터키어 번역
+          resultTitle = "YG Yüz Tipi";
+          resultExplain = "#Kedi Benzeri Yüz, #Zarif Görünüm";
+          resultCeleb = "YG Eğlence Ünlüleri: 2NE1'den CL, BLACKPINK'ten Jennie, BLACKPINK'ten Lisa, BLACKPINK'ten Jisoo, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "uk") {
+          // 우크라이나어 번역
+          resultTitle = "YG Тип обличчя";
+          resultExplain = "#Обличчя Кота, #Вишуканий Вигляд";
+          resultCeleb = "Знаменитості від YG Entertainment: CL з 2NE1, Jennie з BLACKPINK, Lisa з BLACKPINK, Jisoo з BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "vi") {
+          // 베트남어 번역
+          resultTitle = "Kiểu Mặt YG";
+          resultExplain = "#Khuôn mặt giống mèo, #Visual tinh tế";
+          resultCeleb = "Các nghệ sĩ nổi tiếng thuộc công ty giải trí YG: CL của 2NE1, Jennie của BLACKPINK, Lisa của BLACKPINK, Jisoo của BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+
+          } else if(langType == "zh") {
+          // 중국어 번역
+          resultTitle = "YG脸型";
+          resultExplain = "#猫状脸型, #高级视觉";
+          resultCeleb = "YG娱乐公司的名人：2NE1的CL，BLACKPINK的Jennie，BLACKPINK的Lisa，BLACKPINK的Jisoo, 全素美， 韩叶瑟";
+          } else {
+          // 영어 번역
+          resultTitle = "YG Face Type";
+          resultExplain = "#Cat-like Face, #Sophisticated Visual";
+          resultCeleb = "Celebrities from YG Entertainment: 2NE1's CL, BLACKPINK's Jennie, BLACKPINK's Lisa, BLACKPINK's Jisoo, Lee Hi, Jeon Somi, Han Ye-seul";
+          }
+        } else {
+          resultTitle = "YG얼굴상";
+          resultExplain = "#고양이상 #고급스러운 비주얼";
+          resultCeleb = "YG출신 연예인: 2NE1 씨엘, 블랙핑크 제니, 블랙핑크 리사, 블랙핑크 지수, 전소미, 한예슬";
+        }
         break;
       case "hybe":
         resultTitle = "HYBE상";
         resultExplain = "#개성있는 비주얼 #다양한 매력";
-        resultCeleb = "HYBE 소속 연예인: 뉴진스, 르세라핌, 프로미스나인";
+        resultCeleb = "HYBE출신 연예인: 뉴진스, 르세라핌, 프로미스나인";
         break;
       default:
         resultTitle = "알수없음";
