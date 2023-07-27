@@ -5,13 +5,19 @@ const urlMale = "https://teachablemachine.withgoogle.com/models/9yhf9-8B7/"; //v
 const urlFemale = "https://teachablemachine.withgoogle.com/models/Fq3_K1cua/"; //v2
 let model, webcam, labelContainer, maxPredictions;
 let langType = "";
-let domain = "https://moony01.com/kpopface/";
-let loc = window.location.href;
+let loc = window.location.href.split("/")[0] + "//" + window.location.href.split("/")[2] + "/" + window.location.href.split("/")[3] + "/";
 
 document.addEventListener('DOMContentLoaded', function() {
   var headerIcon = document.getElementById('header__icon');
   var siteCache = document.getElementById('site-cache');
   var body = document.body;
+  langType = location.pathname.split("/")[2];
+
+  if(!langType == "" || !langType == null || !langType == "ko") {
+    document.getElementsByTagName("html")[0].setAttribute("lang", langType);
+  } else {
+    document.getElementsByTagName("html")[0].setAttribute("lang", "ko");
+  }
 
   Kakao.init('8329cd81f78ef956d4487f90e5a4cd49'); 
 
@@ -28,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //header 메뉴 클릭시 페이지 이동
 function fnMovePage(page) {
   if(page == "" || page == null) {
-      location.href = domain;
+      location.href = loc;
     } else if(page == "blog") {
       location.href = "/";
     } else {
@@ -40,11 +46,9 @@ function fnMovePage(page) {
 function fnChangeLang(lang) {
   langType = lang.value;
   if(langType == "" || langType == null || langType == "ko") {
-      location.href = domain;
+    location.href = loc;
   } else {
-    location.href = domain+"/"+langType;
-    // html lang="langType" 변경
-    document.getElementsByTagName("html")[0].setAttribute("lang", langType);
+    location.href = loc+"/"+langType;
   }
 }
 
