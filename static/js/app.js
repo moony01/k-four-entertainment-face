@@ -78,7 +78,7 @@ function fn_sendFB(sns) {
   var thisUrl = ""
   var snsTitle = "";
   var snsDesc = "";
-  langType = location.pathname.split("/")[1];
+  langType = location.pathname.split("/")[2];
   if(!langType == "" || !langType == null || !langType == "ko") {
     thisUrl = loc+"/"+langType;
     if(langType == "en") {
@@ -219,7 +219,7 @@ async function predict() {
   prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability))
   console.log(prediction[0].className);
   var resultTitle, resultExplain, resultCeleb;
-  langType = location.pathname.split("/")[1];
+  langType = location.pathname.split("/")[2];
   if (document.getElementById("gender").checked) {
     switch (prediction[0].className) {
       case "sm":
