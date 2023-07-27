@@ -9,11 +9,10 @@
 }
 .content-wrapper {
     flex-direction: column;
-    padding: 60px 0 0;
 }
 .content-wrapper h1 {
     color: #283618;
-    margin-bottom: 10px;
+    margin: 60px auto 10px;
     text-align: center;
 }
 
@@ -525,9 +524,6 @@
  @media screen and (max-width: 767px) {
     .container {
         width: 70vw;
-    }
-    .content-wrapper {
-        padding: 0;
     }
     .content-wrapper h1 {
         margin: 10px 0;
