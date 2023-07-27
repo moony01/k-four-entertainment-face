@@ -9,7 +9,7 @@
 }
 .content-wrapper {
     flex-direction: column;
-    padding: 60px 0 40px;
+    padding: 60px 0 0;
 }
 .content-wrapper h1 {
     color: #283618;
@@ -459,7 +459,7 @@
 
 /* disqus_thread: start */
 #disqus_thread {
-    margin-bottom: 40px;
+    margin:40px auto 40px;
 }
 /* disqus_thread: end */
 
