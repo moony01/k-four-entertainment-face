@@ -35,7 +35,20 @@
 </head>
 <body>
     <div class="site-pusher">
-    {{ content }}
+    <nav class="header">
+        <a href="#" class="header__icon" id="header__icon"></a>
+        <a class="header__logo" onclick="fnMovePage()">KPOP 얼굴상 테스트</a>
+        <nav class="menu">
+            <a onclick="fnMovePage('mbtichat')">MBTI AI 채팅</a>
+            <a onclick="fnMovePage('blog')">블로그</a>
+        </nav>
+    </nav>
+    {{ content }} 
+    {% include disqus.html %}
+    <footer class="footer">
+        <span>© kpopface 2023. ALL Rights Reserved.</span>
+        <a class="privacy" href="#">Privacy policy</a>
+    </footer>
     <div class="site-cache" id="site-cache"></div>
     </div>
 </body>
