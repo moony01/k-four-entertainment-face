@@ -16,6 +16,9 @@
     margin-bottom: 10px;
     text-align: center;
 }
+.google-auto-placed {
+    padding-bottom: 60px;
+}
 /* navbar : start */
 .header {
     position: fixed;
@@ -524,6 +527,12 @@
  @media screen and (max-width: 767px) {
     .container {
         width: 70vw;
+    }
+    .content-wrapper {
+        padding: 0 0 40px;
+    }
+    .content-wrapper h1 {
+        margin: 10px 0;
     }
  }
  
