@@ -43,6 +43,8 @@ function fnChangeLang(lang) {
       location.href = domain;
   } else {
     location.href = domain+"/"+langType;
+    // html lang="langType" 변경
+    document.getElementsByTagName("html")[0].setAttribute("lang", langType);
   }
 }
 
