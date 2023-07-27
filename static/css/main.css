@@ -16,9 +16,7 @@
     margin-bottom: 10px;
     text-align: center;
 }
-.google-auto-placed {
-    padding-bottom: 60px;
-}
+
 /* navbar : start */
 .header {
     position: fixed;
@@ -533,6 +531,9 @@
     }
     .content-wrapper h1 {
         margin: 10px 0;
+    }
+    .google-auto-placed {
+        padding-bottom: 0;
     }
  }
  
