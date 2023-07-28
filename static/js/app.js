@@ -84,10 +84,11 @@ function fn_sendFB(sns) {
   var thisUrl = ""
   var snsTitle = "";
   var snsDesc = "";
-  var thumbUrl = "https://moony01.com/kpopface/static/img/share/thumb.jpg";
+  var thumbUrl = "";
   langType = location.pathname.split("/")[2];
   if(!langType == "" || !langType == null || !langType == "ko") {
     thisUrl = loc+"/"+langType;
+    thumbUrl = "https://moony01.com/kpopface/static/img/share/thumb-en.jpg";
     if(langType == "en") {
       // 영어 번역
       snsTitle = "KPOP Face Test";
@@ -151,6 +152,7 @@ function fn_sendFB(sns) {
     }
   } else {
     thisUrl = loc;
+    thumbUrl = "https://moony01.com/kpopface/static/img/share/thumb.jpg";
     snsTitle = "케이팝 얼굴상 테스트";
     snsDesc = "내 얼굴은 K-POP 엔터 소속사중 어떤 얼굴상일까?";
   }
