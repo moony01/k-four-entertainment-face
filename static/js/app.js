@@ -84,6 +84,7 @@ function fn_sendFB(sns) {
   var thisUrl = ""
   var snsTitle = "";
   var snsDesc = "";
+  var thumbUrl = "https://moony01.com/kpopface/static/img/share/thumb.jpg";
   langType = location.pathname.split("/")[2];
   if(!langType == "" || !langType == null || !langType == "ko") {
     thisUrl = loc+"/"+langType;
@@ -173,7 +174,7 @@ function fn_sendFB(sns) {
         content: {
           title: snsTitle,                    // 제목
           description: snsDesc,               // 설명
-          imageUrl: 'https://moony01.com/static/img/share/thumb.jpg',  // 썸네일 이미지
+          imageUrl: thumbUrl,  // 썸네일 이미지
           link: {
               mobileWebUrl: thisUrl,
               webUrl: thisUrl
