@@ -151,7 +151,7 @@ function fn_sendFB(sns) {
     }
   } else {
     thisUrl = loc;
-    snsTitle = "KPOP 얼굴상 테스트";
+    snsTitle = "케이팝 얼굴상 테스트";
     snsDesc = "내 얼굴은 K-POP 엔터 소속사중 어떤 얼굴상일까?";
   }
 
