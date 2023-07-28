@@ -173,7 +173,7 @@ function fn_sendFB(sns) {
         content: {
           title: snsTitle,                    // 제목
           description: snsDesc,               // 설명
-          imageUrl: 'https://moony01.com/img/share-img.jpg',  // 썸네일 이미지
+          imageUrl: 'https://moony01.com/static/img/share/thumb.jpg',  // 썸네일 이미지
           link: {
               mobileWebUrl: thisUrl,
               webUrl: thisUrl
