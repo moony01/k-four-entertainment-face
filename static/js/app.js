@@ -391,7 +391,7 @@ async function predict() {
             resultCeleb = "Celebrities from JYP Entertainment: Rain, 2PM's Lee Junho, 2PM's Wooyoung, 2AM's Jung Jinwoon, GOT7's Youngjae, DAY6's Dowoon";
           }
         } else {
-          resultTitle = "JYP상";
+          resultTitle = "JYP얼굴상";
           resultExplain = "#무쌍커풀, #매력있는 비주얼 #부드러운 인상";
           resultCeleb = "JYP출신 연예인: 비, 2PM 이준호, 2PM 우영, 2AM 정진운, GOT7 영재, DAY6 도운";
         }
@@ -475,7 +475,7 @@ async function predict() {
           resultCeleb = "Celebrities from YG Entertainment: BIGBANG's G-Dragon, BIGBANG's Taeyang, BIGBANG's Daesung, WINNER's Song Minho, WINNER's Kang Seungyoon, iKON's B.I, iKON's Bobby";
           }
         } else {
-          resultTitle = "YG상";
+          resultTitle = "YG얼굴상";
           resultExplain = "#개성있는 비주얼 #힙합스타일 #장난꾸러기";
           resultCeleb = "YG출신 연예인: 빅뱅 지드래곤, 빅뱅 태양, 빅뱅 대성, 위너 송민호, 위너 강승윤, 아이콘 비아이, 아이콘 바비";
         }
@@ -810,16 +810,165 @@ async function predict() {
     var labelTitle;
     switch (prediction[i].className) {
         case "sm":
-          labelTitle = "SM상";
+          if(!langType == "" || !langType == null || !langType == "ko") {
+            if(langType == "en") {
+              // 영어 번역
+              labelTitle = "SM Face Type";
+            } else if(langType == "de") {
+              // 독일어 번역
+              labelTitle = "SM Gesichtstyp";
+            } else if(langType == "es") {
+              // 스페인어 번역
+              labelTitle = "Tipo de Rostro de SM";
+            } else if(langType == "fr") {
+              // 프랑스어 번역
+              labelTitle = "Type de Visage SM";
+            } else if(langType == "id") {
+              // 인도네시아어 번역
+              labelTitle = "Tipe Wajah SM";
+            } else if(langType == "ja") {
+              // 일본어 번역
+              labelTitle = "SMの顔タイプ";
+            } else if(langType == "nl") {
+              // 네덜란드어 번역
+              labelTitle = "SM Gezichtstype";
+            } else if(langType == "pl") {
+              // 폴란드어 번역
+              labelTitle = "Typ Twarzy SM";
+            } else if(langType == "pt") {
+              // 포르투갈어 번역
+              labelTitle = "Tipo de Rosto SM";
+            } else if(langType == "ru") {
+              // 러시아어 번역
+              labelTitle = "Тип лица SM";
+            } else if(langType == "tr") {
+              // 터키어 번역
+              labelTitle = "SM Yüz Tipi";
+            } else if(langType == "uk") {
+              // 우크라이나어 번역
+              labelTitle = "Тип обличчя SM";
+            } else if(langType == "vi") {
+              // 베트남어 번역
+              labelTitle = "Kiểu Mặt của SM";
+            } else if(langType == "zh") {
+              // 중국어 번역
+              labelTitle = "SM脸型";
+            } else {
+              // 영어 번역
+              labelTitle = "SM Face Type";
+            }
+          } else {
+            labelTitle = "SM얼굴상";
+          }
           break;
         case "jyp":
-          labelTitle = "JYP상";
+          if(!langType == "" || !langType == null || !langType == "ko") {
+            if(langType == "en") {
+              // 영어 번역
+              labelTitle = "JYP Face Type";
+            } else if(langType == "de") {
+              // 독일어 번역
+              labelTitle = "JYP Gesichtstyp";
+            } else if(langType == "es") {
+              // 스페인어 번역
+              labelTitle = "Tipo de Rostro de JYP";
+            } else if(langType == "fr") {
+              // 프랑스어 번역
+              labelTitle = "Type de Visage de JYP";
+            } else if(langType == "id") {
+              // 인도네시아어 번역
+              labelTitle = "Tipe Wajah JYP";
+            } else if(langType == "ja") {
+              // 일본어 번역
+              labelTitle = "JYPの顔タイプ";
+            } else if(langType == "nl") {
+              // 네덜란드어 번역
+              labelTitle = "JYP Gezichtstype";
+            } else if(langType == "pl") {
+              // 폴란드어 번역
+              labelTitle = "Typ Twarzy JYP";
+            } else if(langType == "pt") {
+              // 포르투갈어 번역
+              labelTitle = "Tipo de Rosto JYP";
+            } else if(langType == "ru") {
+              // 러시아어 번역
+              labelTitle = "Тип лица JYP";
+            } else if(langType == "tr") {
+              // 터키어 번역
+              labelTitle = "JYP Yüz Tipi";
+            } else if(langType == "uk") {
+              // 우크라이나어 번역
+              labelTitle = "Тип обличчя JYP";
+            } else if(langType == "vi") {
+              // 베트남어 번역
+              labelTitle = "Kiểu Mặt của JYP";
+            } else if(langType == "zh") {
+              // 중국어 번역
+              labelTitle = "JYP脸型";
+            } else {
+              // 영어 번역
+              labelTitle = "JYP Face Type";
+            }
+          } else {
+            labelTitle = "JYP얼굴상";
+          }
+          
           break;
         case "yg":
-          labelTitle = "YG상";
+          if(!langType == "" || !langType == null || !langType == "ko") {
+            if(langType == "en") {
+            // 영어 번역
+            labelTitle = "YG Face Type";
+            } else if(langType == "de") {
+            // 독일어 번역
+            labelTitle = "YG Gesichtstyp";
+            } else if(langType == "es") {
+            // 스페인어 번역
+            labelTitle = "Tipo de Rostro de YG";
+            } else if(langType == "fr") {
+            // 프랑스어 번역
+            labelTitle = "Type de Visage de YG";
+            } else if(langType == "id") {
+            // 인도네시아어 번역
+            labelTitle = "Tipe Wajah YG";
+            } else if(langType == "ja") {
+            // 일본어 번역
+            labelTitle = "YGの顔タイプ";
+            } else if(langType == "nl") {
+            // 네덜란드어 번역
+            labelTitle = "YG Gezichtstype";
+            } else if(langType == "pl") {
+            // 폴란드어 번역
+            labelTitle = "Typ Twarzy YG";
+            } else if(langType == "pt") {
+            // 포르투갈어 번역
+            labelTitle = "Tipo de Rosto YG";
+            } else if(langType == "ru") {
+            // 러시아어 번역
+            labelTitle = "Тип лица YG";
+            } else if(langType == "tr") {
+            // 터키어 번역
+            labelTitle = "YG Yüz Tipi";
+            } else if(langType == "uk") {
+            // 우크라이나어 번역
+            labelTitle = "Тип обличчя YG";
+            } else if(langType == "vi") {
+            // 베트남어 번역
+            labelTitle = "Kiểu Mặt của YG";
+            } else if(langType == "zh") {
+            // 중국어 번역
+            labelTitle = "YG脸型";
+            } else {
+            // 영어 번역
+            labelTitle = "YG Face Type";
+            }
+          } else {
+            labelTitle = "YG얼굴상";
+          }
+          
           break;
         case "hybe":
-          labelTitle = "HYBE상";
+          labelTitle = "HYBE얼굴상";
           break;
         default:
           labelTitle = "알수없음";
