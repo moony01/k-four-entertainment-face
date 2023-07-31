@@ -485,10 +485,14 @@
 }
 /* footer: end */
 /* 광고 */
-#aswift_1_host {
+#displayAds {
+    width: 50vw;
+    margin: 40px auto 0;
+}
+/* #aswift_1_host {
     display: block !important;
     margin: 0 auto !important;
-}
+} */
 /*
  * 대형 디스플레이 (Large Displays):
  * 해상도: 1200px 이상
