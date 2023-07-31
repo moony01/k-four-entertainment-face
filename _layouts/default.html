@@ -31,6 +31,10 @@
         gtag('config', '{{ site.google_analytics }}');
       </script>
     {% endif %}
+    <script>
+        // 구글 애드센스 광고 삽입 코드
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 </head>
 <body>
@@ -43,7 +47,14 @@
             <a onclick="fnMovePage('blog')">블로그</a>
         </nav>
     </nav>
-    {{ content }} 
+    {{ content }}
+    <!-- kpopface-display-01 -->
+    <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-8955182453510440"
+    data-ad-slot="3138863990"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
     {% include disqus.html %}
     <footer class="footer">
         <span>© kpopface 2023. ALL Rights Reserved.</span>
