@@ -485,6 +485,11 @@
 }
 /* footer: end */
 
+/* 애드센스 */
+#aswift_1_host {
+    max-width: 960px !important;
+}
+
 /*
  * 대형 디스플레이 (Large Displays):
  * 해상도: 1200px 이상
