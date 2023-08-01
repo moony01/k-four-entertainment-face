@@ -87,7 +87,7 @@ function fn_sendFB(sns) {
   var thumbUrl = "";
   langType = location.pathname.split("/")[2];
   if(!langType == "" || !langType == null || !langType == "ko") {
-    thisUrl = loc+"/"+langType;
+    thisUrl = loc+langType;
     thumbUrl = "https://moony01.com/kpopface/static/img/share/thumb-en.jpg";
     if(langType == "en") {
       // 영어 번역
