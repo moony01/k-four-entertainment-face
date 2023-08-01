@@ -598,90 +598,90 @@ async function predict() {
           // 영어 번역
           resultTitle = "JYP Face Type";
           resultExplain = "#Fox-like Face, #Charming Visual";
-          resultCeleb = "Celebrities from JYP Entertainment: Wonder Girls' Ahn So-hee, TWICE's Dahyun, TWICE's Sana, TWICE's Tzuyu, ITZY's Yeji, ITZY's Chaeryeong, ENHYPEN's Sunghoon";
+          resultCeleb = "Celebrities from JYP Entertainment: Wonder Girls Ahn So-hee, TWICE Dahyun, TWICE Sana, TWICE Tzuyu, ITZY Yeji, ITZY Chaeryeong, NMIXX Sullyoon";
 
           } else if(langType == "de") {
           // 독일어 번역
           resultTitle = "JYP Gesichtstyp";
           resultExplain = "#Fuchsgesicht, #Charmantes Aussehen";
-          resultCeleb = "Berühmtheiten von JYP Entertainment: Ahn So-hee von Wonder Girls, Dahyun von TWICE, Sana von TWICE, Tzuyu von TWICE, Yeji von ITZY, Chaeryeong von ITZY, Sunghoon von ENHYPEN";
+          resultCeleb = "Berühmtheiten von JYP Entertainment: Ahn So-hee von Wonder Girls, Dahyun von TWICE, Sana von TWICE, Tzuyu von TWICE, Yeji von ITZY, Chaeryeong von ITZY, NMIXX Sullyoon";
 
           } else if(langType == "es") {
           // 스페인어 번역
           resultTitle = "Tipo de Rostro de JYP";
           resultExplain = "#Cara de Zorro, #Atractivo Visual";
-          resultCeleb = "Celebridades de JYP Entertainment: Ahn So-hee de Wonder Girls, Dahyun de TWICE, Sana de TWICE, Tzuyu de TWICE, Yeji de ITZY, Chaeryeong de ITZY, Sunghoon de ENHYPEN";
+          resultCeleb = "Celebridades de JYP Entertainment: Ahn So-hee de Wonder Girls, Dahyun de TWICE, Sana de TWICE, Tzuyu de TWICE, Yeji de ITZY, Chaeryeong de ITZY, NMIXX Sullyoon";
 
           } else if(langType == "fr") {
           // 프랑스어 번역
           resultTitle = "Type de Visage de JYP";
           resultExplain = "#Visage de Renard, #Visuel Charmant";
-          resultCeleb = "Célébrités de JYP Entertainment: Ahn So-hee des Wonder Girls, Dahyun de TWICE, Sana de TWICE, Tzuyu de TWICE, Yeji d'ITZY, Chaeryeong d'ITZY, Sunghoon d'ENHYPEN";
+          resultCeleb = "Célébrités de JYP Entertainment: Ahn So-hee des Wonder Girls, Dahyun de TWICE, Sana de TWICE, Tzuyu de TWICE, Yeji d'ITZY, Chaeryeong d'ITZY, NMIXX Sullyoon";
 
           } else if(langType == "id") {
           // 인도네시아어 번역
           resultTitle = "Tipe Wajah JYP";
           resultExplain = "#Wajah Rubah, #Visual Menawan";
-          resultCeleb = "Selebriti dari JYP Entertainment: Ahn So-hee dari Wonder Girls, Dahyun dari TWICE, Sana dari TWICE, Tzuyu dari TWICE, Yeji dari ITZY, Chaeryeong dari ITZY, Sunghoon dari ENHYPEN";
+          resultCeleb = "Selebriti dari JYP Entertainment: Ahn So-hee dari Wonder Girls, Dahyun dari TWICE, Sana dari TWICE, Tzuyu dari TWICE, Yeji dari ITZY, Chaeryeong dari ITZY, NMIXX Sullyoon";
 
           } else if(langType == "ja") {
           // 일본어 번역
           resultTitle = "JYPの顔タイプ";
           resultExplain = "#キツネのような顔、#魅力的なビジュアル";
-          resultCeleb = "JYPエンターテインメントの有名人：ワンダーガールズのアン・ソヒ、TWICEのダヒョン、TWICEのサナ、TWICEのツウィ、ITZYのイェジ、ITZYのチェリョン、ENHYPENのスンフン";
+          resultCeleb = "JYPエンターテインメントの有名人：ワンダーガールズのアン・ソヒ、TWICEのダヒョン、TWICEのサナ、TWICEのツウィ、ITZYのイェジ、ITZYのチェリョン、NMIXX スルリ";
 
           } else if(langType == "nl") {
           // 네덜란드어 번역
           resultTitle = "JYP Gezichtstype";
           resultExplain = "#Vosachtig Gezicht, #Betoverende Uitstraling";
-          resultCeleb = "Beroemdheden van JYP Entertainment: Ahn So-hee van Wonder Girls, Dahyun van TWICE, Sana van TWICE, Tzuyu van TWICE, Yeji van ITZY, Chaeryeong van ITZY, Sunghoon van ENHYPEN";
+          resultCeleb = "Beroemdheden van JYP Entertainment: Ahn So-hee van Wonder Girls, Dahyun van TWICE, Sana van TWICE, Tzuyu van TWICE, Yeji van ITZY, Chaeryeong van ITZY, NMIXX Sullyoon";
 
           } else if(langType == "pl") {
           // 폴란드어 번역
           resultTitle = "Typ Twarzy JYP";
           resultExplain = "#Twarz Lis, #Urokliwe Wrażenie";
-          resultCeleb = "Celebryci z JYP Entertainment: Ahn So-hee z Wonder Girls, Dahyun z TWICE, Sana z TWICE, Tzuyu z TWICE, Yeji z ITZY, Chaeryeong z ITZY, Sunghoon z ENHYPEN";
+          resultCeleb = "Celebryci z JYP Entertainment: Ahn So-hee z Wonder Girls, Dahyun z TWICE, Sana z TWICE, Tzuyu z TWICE, Yeji z ITZY, Chaeryeong z ITZY, NMIXX Sullyoon";
 
           } else if(langType == "pt") {
           // 포르투갈어 번역
           resultTitle = "Tipo de Rosto JYP";
           resultExplain = "#Rosto de Raposa, #Visual Encantador";
-          resultCeleb = "Celebridades da JYP Entertainment: Ahn So-hee do Wonder Girls, Dahyun do TWICE, Sana do TWICE, Tzuyu do TWICE, Yeji do ITZY, Chaeryeong do ITZY, Sunghoon do ENHYPEN";
+          resultCeleb = "Celebridades da JYP Entertainment: Ahn So-hee do Wonder Girls, Dahyun do TWICE, Sana do TWICE, Tzuyu do TWICE, Yeji do ITZY, Chaeryeong do ITZY, NMIXX Sullyoon";
 
           } else if(langType == "ru") {
           // 러시아어 번역
           resultTitle = "Тип лица JYP";
           resultExplain = "#Лицо Лисы, #Очаровательный Внешний Вид";
-          resultCeleb = "Знаменитости из JYP Entertainment: Ан Сохи из Wonder Girls, Дахьён из TWICE, Сана из TWICE, Цзюю из TWICE, Еджи из ITZY, Чхэрён из ITZY, Сунхун из ENHYPEN";
+          resultCeleb = "Знаменитости из JYP Entertainment: Ан Сохи из Wonder Girls, Дахьён из TWICE, Сана из TWICE, Цзюю из TWICE, Еджи из ITZY, Чхэрён из ITZY, NMIXX Сулиюн";
 
           } else if(langType == "tr") {
           // 터키어 번역
           resultTitle = "JYP Yüz Tipi";
           resultExplain = "#Tavşan Benzeri Yüz, #Çekici Görünüm";
-          resultCeleb = "JYP Eğlence Ünlüleri: Wonder Girls'den Ahn So-hee, TWICE'dan Dahyun, TWICE'dan Sana, TWICE'dan Tzuyu, ITZY'den Yeji, ITZY'den Chaeryeong, ENHYPEN'den Sunghoon";
+          resultCeleb = "JYP Eğlence Ünlüleri: Wonder Girls'den Ahn So-hee, TWICE'dan Dahyun, TWICE'dan Sana, TWICE'dan Tzuyu, ITZY'den Yeji, ITZY'den Chaeryeong, NMIXX Sullyoon";
 
           } else if(langType == "uk") {
           // 우크라이나어 번역
           resultTitle = "Тип обличчя JYP";
           resultExplain = "#Обличчя Лисиці, #Чарівний Зовнішній Вигляд";
-          resultCeleb = "Знаменитості від JYP Entertainment: Ан Сохі з Wonder Girls, Дахьон з TWICE, Сана з TWICE, Цзюю з TWICE, Еджи з ITZY, Чхерьон з ITZY, Сунхун з ENHYPEN";
+          resultCeleb = "Знаменитості від JYP Entertainment: Ан Сохі з Wonder Girls, Дахьон з TWICE, Сана з TWICE, Цзюю з TWICE, Еджи з ITZY, Чхерьон з ITZY, NMIXX Суліюн";
 
           } else if(langType == "vi") {
           // 베트남어 번역
           resultTitle = "Kiểu Mặt của JYP";
           resultExplain = "#Gương Mặt Giống Cáo, #Visual Quyến Rũ";
-          resultCeleb = "Các nghệ sĩ nổi tiếng thuộc công ty giải trí JYP: Ahn So-hee của Wonder Girls, Dahyun của TWICE, Sana của TWICE, Tzuyu của TWICE, Yeji của ITZY, Chaeryeong của ITZY, Sunghoon của ENHYPEN";
+          resultCeleb = "Các nghệ sĩ nổi tiếng thuộc công ty giải trí JYP: Ahn So-hee của Wonder Girls, Dahyun của TWICE, Sana của TWICE, Tzuyu của TWICE, Yeji của ITZY, Chaeryeong của ITZY, NMIXX Sullyoon";
 
           } else if(langType == "zh") {
           // 중국어 번역
           resultTitle = "JYP脸型";
           resultExplain = "#狐狸般的脸型, #迷人的外貌";
-          resultCeleb = "JYP娱乐公司的名人：Wonder Girls的安素熙，TWICE的多贤，TWICE的莎娜，TWICE的子瑜，ITZY的藝智，ITZY的采玲，ENHYPEN的成薰";
+          resultCeleb = "JYP娱乐公司的名人：Wonder Girls的安素熙，TWICE的多贤，TWICE的莎娜，TWICE的子瑜，ITZY的藝智，ITZY的采玲，NMIXX 舒莉";
           } else {
           // 영어 번역
           resultTitle = "JYP Face Type";
           resultExplain = "#Fox-like Face, #Charming Visual";
-          resultCeleb = "Celebrities from JYP Entertainment: Wonder Girls' Ahn So-hee, TWICE's Dahyun, TWICE's Sana, TWICE's Tzuyu, ITZY's Yeji, ITZY's Chaeryeong, ENHYPEN's Sunghoon";
+          resultCeleb = "Celebrities from JYP Entertainment: Wonder Girls' Ahn So-hee, TWICE's Dahyun, TWICE's Sana, TWICE's Tzuyu, ITZY's Yeji, ITZY's Chaeryeong, NMIXX Sullyoon";
           }
         } else {
           resultTitle = "JYP얼굴상";
@@ -695,30 +695,30 @@ async function predict() {
           // 영어 번역
           resultTitle = "YG Face Type";
           resultExplain = "#Cat-like Face, #Sophisticated Visual";
-          resultCeleb = "Celebrities from YG Entertainment: 2NE1's CL, BLACKPINK's Jennie, BLACKPINK's Lisa, BLACKPINK's Jisoo, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Celebrities from YG Entertainment: 2NE1's CL, BLACKPINK's Jennie, BLACKPINK's Lisa, BLACKPINK's Jisoo, Jeon Somi, Han Ye-seul";
           } else if(langType == "de") {
           // 독일어 번역
           resultTitle = "YG Gesichtstyp";
           resultExplain = "#Katzenartiges Gesicht, #Elegantes Aussehen";
-          resultCeleb = "Berühmtheiten von YG Entertainment: CL von 2NE1, Jennie von BLACKPINK, Lisa von BLACKPINK, Jisoo von BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Berühmtheiten von YG Entertainment: CL von 2NE1, Jennie von BLACKPINK, Lisa von BLACKPINK, Jisoo von BLACKPINK, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "es") {
           // 스페인어 번역
           resultTitle = "Tipo de Rostro YG";
           resultExplain = "#Rostro de Gato, #Visual Sofisticado";
-          resultCeleb = "Celebridades de YG Entertainment: CL de 2NE1, Jennie de BLACKPINK, Lisa de BLACKPINK, Jisoo de BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Celebridades de YG Entertainment: CL de 2NE1, Jennie de BLACKPINK, Lisa de BLACKPINK, Jisoo de BLACKPINK, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "fr") {
           // 프랑스어 번역
           resultTitle = "Type de Visage YG";
           resultExplain = "#Visage de Chat, #Visuel Sophistiqué";
-          resultCeleb = "Célébrités de YG Entertainment: CL de 2NE1, Jennie de BLACKPINK, Lisa de BLACKPINK, Jisoo de BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Célébrités de YG Entertainment: CL de 2NE1, Jennie de BLACKPINK, Lisa de BLACKPINK, Jisoo de BLACKPINK, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "id") {
           // 인도네시아어 번역
           resultTitle = "Tipe Wajah YG";
           resultExplain = "#Wajah Mirip Kucing, #Visual Elegan";
-          resultCeleb = "Selebriti dari YG Entertainment: CL dari 2NE1, Jennie dari BLACKPINK, Lisa dari BLACKPINK, Jisoo dari BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Selebriti dari YG Entertainment: CL dari 2NE1, Jennie dari BLACKPINK, Lisa dari BLACKPINK, Jisoo dari BLACKPINK, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "ja") {
           // 일본어 번역
@@ -730,43 +730,43 @@ async function predict() {
           // 네덜란드어 번역
           resultTitle = "YG Gezichtstype";
           resultExplain = "#Katachtig Gezicht, #Verfijnde Uitstraling";
-          resultCeleb = "Beroemdheden van YG Entertainment: CL van 2NE1, Jennie van BLACKPINK, Lisa van BLACKPINK, Jisoo van BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Beroemdheden van YG Entertainment: CL van 2NE1, Jennie van BLACKPINK, Lisa van BLACKPINK, Jisoo van BLACKPINK, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "pl") {
           /// 폴란드어 번역
           resultTitle = "Typ Twarzy YG";
           resultExplain = "#Twarz Kociego Typu, #Wyrafinowany Wygląd";
-          resultCeleb = "Celebryci z YG Entertainment: CL z 2NE1, Jennie z BLACKPINK, Lisa z BLACKPINK, Jisoo z BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Celebryci z YG Entertainment: CL z 2NE1, Jennie z BLACKPINK, Lisa z BLACKPINK, Jisoo z BLACKPINK, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "pt") {
           // 포르투갈어 번역
           resultTitle = "Tipo de Rosto YG";
           resultExplain = "#Rosto Estilo Gato, #Visual Sofisticado";
-          resultCeleb = "Celebridades da YG Entertainment: CL do 2NE1, Jennie do BLACKPINK, Lisa do BLACKPINK, Jisoo do BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Celebridades da YG Entertainment: CL do 2NE1, Jennie do BLACKPINK, Lisa do BLACKPINK, Jisoo do BLACKPINK, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "ru") {
           // 러시아어 번역
           resultTitle = "Тип лица YG";
           resultExplain = "#Лицо, похожее на кошку, #Стильный образ";
-          resultCeleb = "Знаменитости из YG Entertainment: CL из 2NE1, Jennie из BLACKPINK, Lisa из BLACKPINK, Jisoo из BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Знаменитости из YG Entertainment: CL из 2NE1, Jennie из BLACKPINK, Lisa из BLACKPINK, Jisoo из BLACKPINK, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "tr") {
           // 터키어 번역
           resultTitle = "YG Yüz Tipi";
           resultExplain = "#Kedi Benzeri Yüz, #Zarif Görünüm";
-          resultCeleb = "YG Eğlence Ünlüleri: 2NE1'den CL, BLACKPINK'ten Jennie, BLACKPINK'ten Lisa, BLACKPINK'ten Jisoo, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "YG Eğlence Ünlüleri: 2NE1'den CL, BLACKPINK'ten Jennie, BLACKPINK'ten Lisa, BLACKPINK'ten Jisoo, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "uk") {
           // 우크라이나어 번역
           resultTitle = "YG Тип обличчя";
           resultExplain = "#Обличчя Кота, #Вишуканий Вигляд";
-          resultCeleb = "Знаменитості від YG Entertainment: CL з 2NE1, Jennie з BLACKPINK, Lisa з BLACKPINK, Jisoo з BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Знаменитості від YG Entertainment: CL з 2NE1, Jennie з BLACKPINK, Lisa з BLACKPINK, Jisoo з BLACKPINK, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "vi") {
           // 베트남어 번역
           resultTitle = "Kiểu Mặt YG";
           resultExplain = "#Khuôn mặt giống mèo, #Visual tinh tế";
-          resultCeleb = "Các nghệ sĩ nổi tiếng thuộc công ty giải trí YG: CL của 2NE1, Jennie của BLACKPINK, Lisa của BLACKPINK, Jisoo của BLACKPINK, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Các nghệ sĩ nổi tiếng thuộc công ty giải trí YG: CL của 2NE1, Jennie của BLACKPINK, Lisa của BLACKPINK, Jisoo của BLACKPINK, Jeon Somi, Han Ye-seul";
 
           } else if(langType == "zh") {
           // 중국어 번역
@@ -777,7 +777,7 @@ async function predict() {
           // 영어 번역
           resultTitle = "YG Face Type";
           resultExplain = "#Cat-like Face, #Sophisticated Visual";
-          resultCeleb = "Celebrities from YG Entertainment: 2NE1's CL, BLACKPINK's Jennie, BLACKPINK's Lisa, BLACKPINK's Jisoo, Lee Hi, Jeon Somi, Han Ye-seul";
+          resultCeleb = "Celebrities from YG Entertainment: 2NE1's CL, BLACKPINK's Jennie, BLACKPINK's Lisa, BLACKPINK's Jisoo, Jeon Somi, Han Ye-seul";
           }
         } else {
           resultTitle = "YG얼굴상";
@@ -796,9 +796,9 @@ async function predict() {
         resultCeleb = "";
     }
   }
-  var title = "<div class='" + prediction[0].className + "-animal-title'>" + resultTitle + "</div>"
-  var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>"
-  var celeb = "<div class='" + prediction[0].className + "-animal-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
+  var title = "<div class='" + prediction[0].className + "-kpop-title'>" + resultTitle + "</div>"
+  var explain = "<div class='kpop-explain pt-2'>" + resultExplain + "</div>"
+  var celeb = "<div class='" + prediction[0].className + "-kpop-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
   $('.result-messege').html(title + explain + celeb);
   var barWidth;
 
@@ -813,162 +813,13 @@ async function predict() {
     var labelTitle;
     switch (prediction[i].className) {
         case "sm":
-          if(!langType == "" || !langType == null || !langType == "ko") {
-            if(langType == "en") {
-              // 영어 번역
-              labelTitle = "SM Face Type";
-            } else if(langType == "de") {
-              // 독일어 번역
-              labelTitle = "SM Gesichtstyp";
-            } else if(langType == "es") {
-              // 스페인어 번역
-              labelTitle = "Tipo de Rostro de SM";
-            } else if(langType == "fr") {
-              // 프랑스어 번역
-              labelTitle = "Type de Visage SM";
-            } else if(langType == "id") {
-              // 인도네시아어 번역
-              labelTitle = "Tipe Wajah SM";
-            } else if(langType == "ja") {
-              // 일본어 번역
-              labelTitle = "SMの顔タイプ";
-            } else if(langType == "nl") {
-              // 네덜란드어 번역
-              labelTitle = "SM Gezichtstype";
-            } else if(langType == "pl") {
-              // 폴란드어 번역
-              labelTitle = "Typ Twarzy SM";
-            } else if(langType == "pt") {
-              // 포르투갈어 번역
-              labelTitle = "Tipo de Rosto SM";
-            } else if(langType == "ru") {
-              // 러시아어 번역
-              labelTitle = "Тип лица SM";
-            } else if(langType == "tr") {
-              // 터키어 번역
-              labelTitle = "SM Yüz Tipi";
-            } else if(langType == "uk") {
-              // 우크라이나어 번역
-              labelTitle = "Тип обличчя SM";
-            } else if(langType == "vi") {
-              // 베트남어 번역
-              labelTitle = "Kiểu Mặt của SM";
-            } else if(langType == "zh") {
-              // 중국어 번역
-              labelTitle = "SM脸型";
-            } else {
-              // 영어 번역
-              labelTitle = "SM Face Type";
-            }
-          } else {
-            labelTitle = "SM얼굴상";
-          }
+          labelTitle = "SM";
           break;
         case "jyp":
-          if(!langType == "" || !langType == null || !langType == "ko") {
-            if(langType == "en") {
-              // 영어 번역
-              labelTitle = "JYP Face Type";
-            } else if(langType == "de") {
-              // 독일어 번역
-              labelTitle = "JYP Gesichtstyp";
-            } else if(langType == "es") {
-              // 스페인어 번역
-              labelTitle = "Tipo de Rostro de JYP";
-            } else if(langType == "fr") {
-              // 프랑스어 번역
-              labelTitle = "Type de Visage de JYP";
-            } else if(langType == "id") {
-              // 인도네시아어 번역
-              labelTitle = "Tipe Wajah JYP";
-            } else if(langType == "ja") {
-              // 일본어 번역
-              labelTitle = "JYPの顔タイプ";
-            } else if(langType == "nl") {
-              // 네덜란드어 번역
-              labelTitle = "JYP Gezichtstype";
-            } else if(langType == "pl") {
-              // 폴란드어 번역
-              labelTitle = "Typ Twarzy JYP";
-            } else if(langType == "pt") {
-              // 포르투갈어 번역
-              labelTitle = "Tipo de Rosto JYP";
-            } else if(langType == "ru") {
-              // 러시아어 번역
-              labelTitle = "Тип лица JYP";
-            } else if(langType == "tr") {
-              // 터키어 번역
-              labelTitle = "JYP Yüz Tipi";
-            } else if(langType == "uk") {
-              // 우크라이나어 번역
-              labelTitle = "Тип обличчя JYP";
-            } else if(langType == "vi") {
-              // 베트남어 번역
-              labelTitle = "Kiểu Mặt của JYP";
-            } else if(langType == "zh") {
-              // 중국어 번역
-              labelTitle = "JYP脸型";
-            } else {
-              // 영어 번역
-              labelTitle = "JYP Face Type";
-            }
-          } else {
-            labelTitle = "JYP얼굴상";
-          }
-          
+          labelTitle = "JYP";
           break;
         case "yg":
-          if(!langType == "" || !langType == null || !langType == "ko") {
-            if(langType == "en") {
-            // 영어 번역
-            labelTitle = "YG Face Type";
-            } else if(langType == "de") {
-            // 독일어 번역
-            labelTitle = "YG Gesichtstyp";
-            } else if(langType == "es") {
-            // 스페인어 번역
-            labelTitle = "Tipo de Rostro de YG";
-            } else if(langType == "fr") {
-            // 프랑스어 번역
-            labelTitle = "Type de Visage de YG";
-            } else if(langType == "id") {
-            // 인도네시아어 번역
-            labelTitle = "Tipe Wajah YG";
-            } else if(langType == "ja") {
-            // 일본어 번역
-            labelTitle = "YGの顔タイプ";
-            } else if(langType == "nl") {
-            // 네덜란드어 번역
-            labelTitle = "YG Gezichtstype";
-            } else if(langType == "pl") {
-            // 폴란드어 번역
-            labelTitle = "Typ Twarzy YG";
-            } else if(langType == "pt") {
-            // 포르투갈어 번역
-            labelTitle = "Tipo de Rosto YG";
-            } else if(langType == "ru") {
-            // 러시아어 번역
-            labelTitle = "Тип лица YG";
-            } else if(langType == "tr") {
-            // 터키어 번역
-            labelTitle = "YG Yüz Tipi";
-            } else if(langType == "uk") {
-            // 우크라이나어 번역
-            labelTitle = "Тип обличчя YG";
-            } else if(langType == "vi") {
-            // 베트남어 번역
-            labelTitle = "Kiểu Mặt của YG";
-            } else if(langType == "zh") {
-            // 중국어 번역
-            labelTitle = "YG脸型";
-            } else {
-            // 영어 번역
-            labelTitle = "YG Face Type";
-            }
-          } else {
-            labelTitle = "YG얼굴상";
-          }
-          
+          labelTitle = "YG";
           break;
         case "hybe":
           labelTitle = "HYBE얼굴상";

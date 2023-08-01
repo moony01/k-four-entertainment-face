@@ -549,6 +549,19 @@
     .container {
         width: 90vw;
     }
+    #label-container {
+        width: 95%;
+    }
+    .result-messege {
+        line-height: 34px;
+        padding: 10px 0;
+    }
+    /* .result-messege 의 첫번째 div 자식요소 */
+    .result-messege > div:first-child {
+        font-size: 32px;
+        font-weight: 600;
+        padding-bottom: 10px;
+    }
  }
  
  @media screen and (min-width: 270px) and (max-width: 330px) {
