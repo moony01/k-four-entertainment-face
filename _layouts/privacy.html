@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="static/css/common.css">
+    <link rel="stylesheet" href="static/css/loading.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <script src="static/js/app.js"></script>
+
+    <title>개인정보처리방침</title>
+</head>
+<body>
+    <div class="site-pusher">
+    <nav class="header">
+        <a href="#" class="header__icon" id="header__icon"></a>
+        <a class="header__logo" onclick="fnMovePage()">케이팝 얼굴상 테스트</a>
+        <nav class="menu">
+            <a onclick="fnMovePage('mbtichat')">MBTI AI 채팅</a>
+            <a onclick="fnMovePage('blog')">블로그</a>
+        </nav>
+    </nav>
+    {{ content }}
+    <footer class="footer">
+        <span>© kpopface 2023. ALL Rights Reserved.</span>
+        <a class="privacy" href="{{ site.url }}/kpopface/privacy.html">Privacy policy</a>
+    </footer>
+    <div class="site-cache" id="site-cache"></div>
+    </div>
+</body>
+</html>
