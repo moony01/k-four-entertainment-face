@@ -31,18 +31,15 @@
     {% endif %}
 
     {% if page.url %}
-      <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+        <meta content="{{ site.url }}/kpopface{{ page.url }}" property="og:url">
     {% endif %}
-
-    <meta content="{{ site.url }}/static/img/share/thumb.jpg" property="og:image">
+        <meta content="{{ site.url }}/kpopface/static/img/share/thumb.jpg" property="og:image">
 
     {% if page.description %}
-      <meta content="{{ page.description }}" property="og:description">
+        <meta content="{{ page.description }}" property="og:description">
     {% else %}
-      <meta content="{{ site.description }}" property="og:description">
+        <meta content="{{ site.description }}" property="og:description">
     {% endif %}
-
-
 
     {% if jekyll.environment == "production" %}
       <!-- Google Analytics -->
