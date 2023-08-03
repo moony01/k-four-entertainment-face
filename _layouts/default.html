@@ -47,6 +47,13 @@
       <!-- Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id='{{ site.google_analytics }}'"></script>
       <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+      </script>
+    {% endif %}
+    <script>
         const userAgent = navigator.userAgent;
         const isReactNativeWebView = /wv|WebView/i.test(userAgent);
 
@@ -58,7 +65,7 @@
              */
             console.log("webview connect: ", isReactNativeWebView);
             //URL이 "/", "/index.html" 일 경우 모달팝업 띄우기
-            if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+            if (window.location.pathname === "/kpopface/" || window.location.pathname === "/kpopface/index.html") {
                 document.getElementById("appDown").style.display = "none";
                 //REACT NATIVE WEBVIEW가 아닐 경우 모달팝업 띄우기
                 if (!isReactNativeWebView) {
@@ -67,13 +74,6 @@
             }
         });
 
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-      </script>
-    {% endif %}
-    <script>
         // 구글 애드센스 광고 삽입 코드
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
