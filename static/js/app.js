@@ -200,6 +200,18 @@ function fn_sendFB(sns) {
     alert("URL이 복사되었습니다.");
   } 
 }
+
+//모달팝업창 닫기
+function fnClose() {
+  document.querySelector(".modal").style.display = "none";
+}
+
+//앱 다운로드 페이지 이동
+function fnAppDownloadPage() {
+  // var url = "https://play.google.com/store/apps/details?id=com.mhhan01.kpopface"
+  // window.open(url);
+  alert("준비중입니다.");
+}
 /* ******************************************************************************************
  * FUNCTION
 ****************************************************************************************** */
