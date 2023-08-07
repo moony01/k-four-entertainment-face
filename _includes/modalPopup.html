@@ -1,3 +1,27 @@
+<script type="text/javascript"> 
+    // 접속 핸드폰 정보 
+    var userAgentLower = navigator.userAgent.toLowerCase();
+    var url = "https://moony01.com/kpopface/";
+    var icon = "static/img/icon.png";
+    var title = "케이팝 얼굴상 테스트";
+    var serviceCode = "서비스명";
+    
+    function home_key(){
+        document.write('<object id="bookmark_obj" type="text/html" data="naversearchapp://addshortcut?url='+url+'&icon='+icon+'&title='+title+'&serviceCode='+serviceCode+'&version=7" width="0" height="0"></object>')
+    }
+    
+    function fnHomeClick(){
+        if(userAgentLower.match('iphone')) { 
+            home_key();
+        } else if(userAgentLower.match('ipad')) { 
+            home_key();
+        } else if(userAgentLower.match('ipod')) { 
+            home_key();
+        } else if(userAgentLower.match('android')) { 
+            home_key();
+        } 
+    }
+</script>
 <!-- app 다운로드 modal 팝업 -->
 <div id="appDown" class="modal" style="display: none;">
     <div class="modal-content">
@@ -11,6 +35,7 @@
             <div class="modal-btn">
                 <!-- <button class="modal-down"><i class="fab fa-apple"></i><span>App Store</span></button> -->
                 <button class="modal-down" onclick="fnAppDownloadPage()"><i class="fab fa-google-play"></i><span>Google Play</span></button>
+                <button class="modal-down" onclick="fnHomeClick()"><i class="fab fa-google-play"></i><span>아이콘</span></button>
             </div>
         </div>
     </div>
