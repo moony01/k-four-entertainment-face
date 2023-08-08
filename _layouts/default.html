@@ -15,6 +15,7 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.webmanifest" />
     <!-- 카카오 공유하기 -->
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <!-- 구글애드센스 -->
@@ -67,16 +68,13 @@
             console.log("webview connect: ", isReactNativeWebView);
             //URL이 "/", "/index.html" 일 경우 모달팝업 띄우기
             if (window.location.pathname === "/kpopface/" || window.location.pathname === "/kpopface/index.html") {
-                document.getElementById("appDown").style.display = "none";
+                document.getElementById("appDown").style.display = "block";
                 //REACT NATIVE WEBVIEW가 아닐 경우 모달팝업 띄우기
                 if (!isReactNativeWebView) {
-                    document.getElementById("appDown").style.display = "none";
+                    document.getElementById("appDown").style.display = "block";
                 }
             }
         });
-
-        // 구글 애드센스 광고 삽입 코드
-        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 </head>

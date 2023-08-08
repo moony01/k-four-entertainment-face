@@ -5,6 +5,7 @@ const urlMale = "https://teachablemachine.withgoogle.com/models/9yhf9-8B7/"; //v
 const urlFemale = "https://teachablemachine.withgoogle.com/models/Fq3_K1cua/"; //v2
 let model, webcam, labelContainer, maxPredictions;
 let langType = "";
+let langYn = "";
 let loc = window.location.href.split("/")[0] + "//" + window.location.href.split("/")[2] + "/" + window.location.href.split("/")[3] + "/";
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if(!langType == "" || !langType == null || !langType == "ko") {
     document.getElementsByTagName("html")[0].setAttribute("lang", langType);
+    langYn = '../';
   } else {
     document.getElementsByTagName("html")[0].setAttribute("lang", "ko");
   }
@@ -207,10 +209,15 @@ function fnClose() {
 }
 
 //앱 다운로드 페이지 이동
-function fnAppDownloadPage() {
-  // var url = "https://play.google.com/store/apps/details?id=com.mhhan01.kpopface"
-  // window.open(url);
-  alert("준비중입니다.");
+function fnAppDownloadPage(app) {
+  if (app == "android") {
+    var url = "https://play.google.com/store/apps/details?id=com.mhhan01.kpopface"
+    window.open(url);
+  } else if (app == "a2hs") {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register(langYn+"static/js/sw.js");
+    }
+  }
 }
 /* ******************************************************************************************
  * FUNCTION
