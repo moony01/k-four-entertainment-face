@@ -7,6 +7,7 @@ let model, webcam, labelContainer, maxPredictions;
 let langType = "";
 let langYn = "";
 let loc = window.location.href.split("/")[0] + "//" + window.location.href.split("/")[2] + "/" + window.location.href.split("/")[3] + "/";
+var deferredPrompt;
 
 document.addEventListener('DOMContentLoaded', function() {
   var headerIcon = document.getElementById('header__icon');
@@ -31,6 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
   siteCache.addEventListener('click', function() {
     body.classList.remove('with--sidebar');
   });
+});
+
+window.addEventListener('beforeinstallprompt', function(e) {
+  console.log('beforeinstallprompt Event fired');
+  e.preventDefault();
+
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+
+  return false;
 });
 
 //header 메뉴 클릭시 페이지 이동
@@ -214,9 +225,32 @@ function fnAppDownloadPage(app) {
     var url = "https://play.google.com/store/apps/details?id=com.mhhan01.kpopface"
     window.open(url);
   } else if (app == "a2hs") {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register(langYn+"static/js/sw.js");
+    // if ("serviceWorker" in navigator) {
+    //   navigator.serviceWorker.register(langYn+"static/js/sw.js");
+    // }
+    
+    if(deferredPrompt !== undefined) {
+      // The user has had a postive interaction with our app and Chrome
+      // has tried to prompt previously, so let's show the prompt.
+      deferredPrompt.prompt();
+  
+      // Follow what the user has done with the prompt.
+      deferredPrompt.userChoice.then(function(choiceResult) {
+  
+        console.log(choiceResult.outcome);
+  
+        if(choiceResult.outcome == 'dismissed') {
+          console.log('User cancelled home screen install');
+        }
+        else {
+          console.log('User added to home screen');
+        }
+  
+        // We no longer need the prompt.  Clear it up.
+        deferredPrompt = null;
+      });
     }
+
   }
 }
 /* ******************************************************************************************

@@ -1,22 +1,26 @@
 {
-    "name": "KpopFaceTest",
-    "icons": [
-      {
-        "src": "static/img/icon.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "static/img/icon.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ],
-    "display": "fullscreen",
-    "start_url": "/kpopface",
-    "description": "인공지능을 이용한 케이팝 소속사 얼굴상 테스트",
-    "background_color": "white",
-    "short_name": "KpopFaceTest",
-    "theme_color": "#283618",
-    "orientation": "portrait"
-  }
+  "short_name": "KpopFaceTest",
+  "name": "케이팝 소속사 얼굴상 테스트",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "static/img/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "static/img/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/kpopface",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "theme_color": "#283618",
+  "background_color": "#ffffff"
+}
