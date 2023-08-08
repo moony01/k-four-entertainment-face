@@ -462,6 +462,17 @@
 }
 /* disqus_thread: end */
 
+/* app-download-wrap: start */
+.app-download-wrap {
+    width: 50vw !important;
+    margin: 0 auto !important;
+}
+.adw-head {
+    margin: 10% 0 2% !important;
+    font-size: 2em !important;
+}
+/* app-download-wrap: start */
+
 /* footer: start */
 .footer {
     display: flex;
@@ -538,6 +549,10 @@
     }
     .google-auto-placed {
         padding-bottom: 0;
+    }
+    .app-download-wrap {
+        width: 90vw !important;
+        margin: 0 auto !important;
     }
  }
  

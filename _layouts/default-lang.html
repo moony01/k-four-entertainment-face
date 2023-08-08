@@ -73,10 +73,10 @@
             console.log("webview connect: ", isReactNativeWebView);
             //URL이 "/", "/index.html" 일 경우 모달팝업 띄우기
             if (window.location.pathname === "/kpopface/en/" || window.location.pathname === "/kpopface/en/index.html") {
-                document.getElementById("appDown").style.display = "block";
+                document.getElementById("appDown").style.display = "none";
                 //REACT NATIVE WEBVIEW가 아닐 경우 모달팝업 띄우기
                 if (!isReactNativeWebView) {
-                    document.getElementById("appDown").style.display = "block";
+                    document.getElementById("appDown").style.display = "none";
                 }
             }
         });
@@ -94,6 +94,12 @@
         </nav>
     </nav>
     {{ content }}
+    <p>Would you like to download the app?</p>
+    <div class="modal-btn">
+        <!-- <button class="modal-down"><i class="fab fa-apple"></i><span>App Store</span></button> -->
+        <button class="modal-down" onclick="fnAppDownloadPage('android')"><i class="fab fa-google-play"></i><span>Google Play</span></button>
+        <button class="modal-down" onclick="fnAppDownloadPage('a2hs')"><i class="fa-solid fa-mobile-button"></i><span>Add To App</span></button>
+    </div>
     {% include display01.html %}
     {% include disqus.html %}
     <footer class="footer">
