@@ -61,7 +61,7 @@ function fnChangeLang(lang) {
   if(langType == "" || langType == null || langType == "ko") {
     location.href = loc;
   } else {
-    location.href = loc+"/"+langType;
+    location.href = loc+langType;
   }
 }
 
