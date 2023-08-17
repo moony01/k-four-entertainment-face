@@ -115,7 +115,7 @@
     <div class="site-pusher">
     <nav class="header">
         <a href="#" class="header__icon" id="header__icon"></a>
-        {% if page.lang %}
+        {% if page.lang != "ko" %}
         <a class="header__logo" onclick="fnMovePage()">KPOP FACE TEST</a>
         <nav class="menu">
             <a onclick="fnMovePage('mbtichat')">MBTI AI CHAT</a>
@@ -131,7 +131,7 @@
     </nav>
     {{ content }}
     <div class="modal-body app-download-wrap">
-        {% if page.lang %}
+        {% if page.lang != "ko" %}
         <p class="adw-head">Would you like to download the app?</p>
         <div class="modal-btn">
             <!-- <button class="modal-down"><i class="fab fa-apple"></i><span>App Store</span></button> -->
