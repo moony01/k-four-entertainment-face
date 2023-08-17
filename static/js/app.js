@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var body = document.body;
   langType = location.pathname.split("/")[2];
 
-  if(!langType == "" || !langType == null || !langType == "ko") {
-    document.getElementsByTagName("html")[0].setAttribute("lang", langType);
-    langYn = '../';
-  } else {
-    document.getElementsByTagName("html")[0].setAttribute("lang", "ko");
-  }
+  // if(!langType == "" || !langType == null || !langType == "ko") {
+  //   document.getElementsByTagName("html")[0].setAttribute("lang", langType);
+  //   langYn = '../';
+  // } else {
+  //   document.getElementsByTagName("html")[0].setAttribute("lang", "ko");
+  // }
 
   Kakao.init('8329cd81f78ef956d4487f90e5a4cd49'); 
 
