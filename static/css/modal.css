@@ -118,6 +118,7 @@
 .modal-body .modal-btn button:nth-child(2) {
     background-color: #fefaec;
     color: #625772;
+    display: none;
 }
 
 .modal-body .modal-btn button:nth-child(2):hover {

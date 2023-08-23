@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-    
+    <meta name="theme-color" content="#283618"/>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="alternate" type="application/rss+xml" title="기술비밀공유소: 소프트웨어 개발과 IT 혁신의 열쇠를 찾아서" href="https://moony01.com/sitemap.xml" />
 
@@ -23,7 +24,7 @@
         <link rel="apple-touch-icon" sizes="167x167" href="../static/img/icon.png">
         <link rel="apple-touch-icon" sizes="180x180" href="../static/img/icon.png">
 
-        <link rel="manifest" href="../manifest.webmanifest" />
+        <link rel="manifest" href="../manifestLang.json" />
     {% else %}
         <link rel="icon" href="favicon.png" type="image/x-icon">
 
@@ -37,7 +38,7 @@
         <link rel="apple-touch-icon" sizes="167x167" href="static/img/icon.png">
         <link rel="apple-touch-icon" sizes="180x180" href="static/img/icon.png">
 
-        <link rel="manifest" href="manifest.webmanifest" />
+        <link rel="manifest" href="manifest.json" />
     {% endif %}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -137,14 +138,14 @@
         <div class="modal-btn">
             <!-- <button class="modal-down"><i class="fab fa-apple"></i><span>App Store</span></button> -->
             <button class="modal-down" onclick="fnAppDownloadPage('android')"><i class="fab fa-google-play"></i><span>Google Play</span></button>
-            <button class="modal-down" onclick="fnAppDownloadPage('a2hs')"><i class="fa-solid fa-mobile-button"></i><span>Add To App</span></button>
+            <button class="modal-down app-download" onclick="fnAppDownloadPage('a2hs')"><i class="fa-solid fa-mobile-button"></i><span>Add To App</span></button>
         </div>
         {% else %}
         <p class="adw-head">앱을 다운로드하시겠습니까?</p>
         <div class="modal-btn">
             <!-- <button class="modal-down"><i class="fab fa-apple"></i><span>App Store</span></button> -->
             <button class="modal-down" onclick="fnAppDownloadPage('android')"><i class="fab fa-google-play"></i><span>구글플레이</span></button>
-            <!-- <button class="modal-down" onclick="fnAppDownloadPage('a2hs')"><i class="fa-solid fa-mobile-button"></i><span>앱 직접설치</span></button> -->
+            <button class="modal-down app-download" onclick="fnAppDownloadPage('a2hs')"><i class="fa-solid fa-mobile-button"></i><span>앱 직접설치</span></button>
         </div>
         {% endif %}
     </div>

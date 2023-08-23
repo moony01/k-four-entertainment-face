@@ -41,6 +41,9 @@ window.addEventListener('beforeinstallprompt', function(e) {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
 
+  //class명 app-download 를 display:block 으로 변경
+  document.querySelector(".app-download").style.display = "block";
+
   return false;
 });
 
