@@ -228,10 +228,6 @@ function fnAppDownloadPage(app) {
     var url = "https://play.google.com/store/apps/details?id=com.mhhan01.kpopface"
     window.open(url);
   } else if (app == "a2hs") {
-    // if ("serviceWorker" in navigator) {
-    //   navigator.serviceWorker.register(langYn+"static/js/sw.js");
-    // }
-    
     if(deferredPrompt !== undefined) {
       // The user has had a postive interaction with our app and Chrome
       // has tried to prompt previously, so let's show the prompt.

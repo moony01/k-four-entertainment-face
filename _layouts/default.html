@@ -91,9 +91,11 @@
         gtag('config', '{{ site.google_analytics }}');
       </script>
     {% endif %}
+    
     <script>
         const userAgent = navigator.userAgent;
         const isReactNativeWebView = /wv|WebView/i.test(userAgent);
+        langType = location.pathname.split("/")[2];
 
         //모든 페이지에 영향을 미치는 공통 요소들의 언어를 변경하는 함수
         document.addEventListener("DOMContentLoaded", function() {
@@ -103,14 +105,29 @@
              */
             console.log("webview connect: ", isReactNativeWebView);
             //URL이 "/", "/index.html" 일 경우 모달팝업 띄우기
-            if (window.location.pathname === "/kpopface/" || window.location.pathname === "/kpopface/index.html") {
-                document.getElementById("appDown").style.display = "none";
-                //REACT NATIVE WEBVIEW가 아닐 경우 모달팝업 띄우기
-                if (!isReactNativeWebView) {
-                    document.getElementById("appDown").style.display = "none";
+            // if (window.location.pathname === "/kpopface/" || window.location.pathname === "/kpopface/index.html") {
+            //     document.getElementById("appDown").style.display = "none";
+            //     //REACT NATIVE WEBVIEW가 아닐 경우 모달팝업 띄우기
+            //     if (!isReactNativeWebView) {
+            //         document.getElementById("appDown").style.display = "none";
+            //     }
+            // }
+
+            // 서비스 워커 등록
+            if ("serviceWorker" in navigator) {
+                if(!langType == "" || !langType == null || !langType == "ko") {
+                    navigator.serviceWorker.register("../static/js/pwabuilder-sw.js");
+                } else {
+                    navigator.serviceWorker.register("static/js/pwabuilder-sw.js");
                 }
+                
             }
         });
+    </script>
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
     </script>
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 </head>
