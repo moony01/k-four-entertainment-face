@@ -116,14 +116,14 @@
             // 서비스 워커 등록
             if ("serviceWorker" in navigator) {
                 if(!langType == "" || !langType == null || !langType == "ko") {
-                    navigator.serviceWorker.register("../static/js/pwabuilder-sw.js").then(function (registration) {
+                    navigator.serviceWorker.register("../pwabuilder-sw.js").then(function (registration) {
                         console.log("Service Worker registered with scope:", registration.scope);
                     })
                     .catch(function (err) {
                         console.log("Service Worker registration failed", err);
                     });
                 } else {
-                    navigator.serviceWorker.register("static/js/pwabuilder-sw.js").then(function (registration) {
+                    navigator.serviceWorker.register("pwabuilder-sw.js").then(function (registration) {
                         console.log("Service Worker registered with scope:", registration.scope);
                     })
                     .catch(function (err) {
