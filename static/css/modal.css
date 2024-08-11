@@ -79,6 +79,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 10%;
 }
 
 .modal-body .modal-btn button {
