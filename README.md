@@ -39,3 +39,13 @@
 3. 프로젝트를 실행하기 전에 Gemfile에 명시된 종속성들을 설치 하기위해 `bundle install` 명령어를 실행합니다.
 
 4. 종속성 설치를 완료했으면 `bundle exec jekyll serve` 명령어를 실행합니다.
+
+# Git 명령어
+
+1. 브랜치 변경: `git checkout gh-pages`
+
+2. 현재 브랜치에서 다른 브랜치의 최신 버전 merge: `git merge main`
+
+3. 최신 버전 merge한 내역 저장소에 push: `git push`
+
+4. `git commit -m "명령어"`
